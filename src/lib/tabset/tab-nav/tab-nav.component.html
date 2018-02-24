@@ -1,0 +1,6 @@
+<div class="cross-sell-nav">
+  <div *ngFor="let tab of tabset?.tabs" class="cross-sell-nav-item" [class.active]="tab.active" (click)="tabset.selectTab(tab)">
+    {{ tab.title }}
+  </div>
+  <ng-content></ng-content>
+</div>

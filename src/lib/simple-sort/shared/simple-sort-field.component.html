@@ -1,0 +1,7 @@
+<ng-content></ng-content>&nbsp;
+<b class="fa fa-unsorted"
+  [ngClass]="{
+    'fa-sort-down': simpleSort.activeSortField === sortField,
+    'fa-sort-up': simpleSort.activeSortField === reverseSortField
+  }">
+</b>

@@ -1,0 +1,15 @@
+<span (click)="modal.show()">
+  <ng-content select="rd-bootstrap-modal-trigger, [rd-bootstrap-modal-trigger]"></ng-content>
+</span>
+
+<rd-modal [options]="options" (shown)="onShown($event)" (hidden)="onHidden($event)" (loaded)="onLoaded($event)">
+    <div class="modal-header">
+      <ng-content select="[rd-bootstrap-modal-header]"></ng-content>
+    </div>
+    <div class="modal-body">
+      <ng-content select="[rd-bootstrap-modal-body]"></ng-content>
+    </div>
+    <div class="modal-footer">
+      <ng-content select="[rd-bootstrap-modal-footer]"></ng-content>
+    </div>
+</rd-modal>

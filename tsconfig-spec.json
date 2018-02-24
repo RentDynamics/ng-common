@@ -13,8 +13,10 @@
     "declaration": false,
     "types": [
       "jasmine",
-      "toastr",
-      "jssha"
+      "bootstrap",
+      "fullcalendar",
+      "jquery",
+      "toastr"
     ],
     "typeRoots": [
       "node_modules/@types"

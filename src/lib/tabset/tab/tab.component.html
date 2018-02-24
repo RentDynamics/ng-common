@@ -1,0 +1,6 @@
+<div class="ui bottom attached tab segment"> <!-- removed: *ngIf="active" [adding an *ngIf here DOES NOT PREVENT its transcluded CHILD COMPONENTS from INITIALIZING
+  and therefore doing so would be rendered almost entirely useless (transclusion === content-projection)] -->
+
+  <ng-content></ng-content>
+
+</div>

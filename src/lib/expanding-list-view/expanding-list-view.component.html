@@ -1,0 +1,8 @@
+<div (click)="onClick(!open)">
+  <!-- expanding-list-view header injected here -->
+  <ng-content select="[rd-expanding-list-view-header]"></ng-content>
+</div>
+<div class="collapse-card__body" style="display: block;">
+  <!-- expanding-list-view body injected here -->
+  <ng-content select="[rd-expanding-list-view-body]"></ng-content>
+</div>
