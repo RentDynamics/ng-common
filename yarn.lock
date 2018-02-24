@@ -64,10 +64,6 @@
     lodash "^4.17.4"
     url-template "^2.0.8"
 
-"@rd/core@file:rd-core-7.0.0.tgz":
-  version "7.0.0"
-  resolved "file:rd-core-7.0.0.tgz#73b32bbb7f07ba79605b8cff1161f21f28f6e52f"
-
 "@semantic-release/commit-analyzer@^5.0.0":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-5.0.2.tgz#4db92f1aaed02397393ac78309892627c88eb64a"
