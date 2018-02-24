@@ -4,9 +4,9 @@ import commonjs from 'rollup-plugin-commonjs';
 import uglify from 'rollup-plugin-uglify'
 //paths are relative to the execution path
 
-const fileName = 'core';
-const moduleName = '@rd/core';
-const moduleVersion = '7.0.0';
+const fileName = 'common';
+const moduleName = '@rd/common';
+const moduleVersion = '';
 
 
 export default {
@@ -14,13 +14,12 @@ export default {
     external: [
         '@angular/core',
         '@angular/common',
+        '@angular/http',
         '@rd/core',
-        '@rd/forms',
         'moment',
         'moment-range',
         'moment-timezone',
-        'rxjs/Rx',
-        'jssha'
+        'rxjs/Rx'
     ],
     output: {
         name: moduleName,
