@@ -69,9 +69,7 @@ var config = {
         /* https://github.com/rollup/rollup-plugin-commonjs */
         commonjs({
             include: ['node_modules/rxjs/**']
-        }),
-        /* https://github.com/TrySound/rollup-plugin-uglify */
-        uglify()
+        })
     ]
   }
 
