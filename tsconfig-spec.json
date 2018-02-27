@@ -25,16 +25,10 @@
       "es2016",
       "dom",
       "es2015"
-    ],
-    "paths": {
-      "/testing": ["./src/testing"]
-    }
+    ]
   },
   "include": [
-    "./build/testing/index.ts",
-    "./build/datetime.ts",
     "./build/browser-test-shim.ts",
-    "./build/systemjs.config.ts",
     "./build/**/*.d.ts",
     "./build/**/*.spec.ts"
   ],
