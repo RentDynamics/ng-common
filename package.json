@@ -1,7 +1,7 @@
 {
   "name": "@rd/common",
   "version": "0.0.0-development",
-  "main": "bundles/common.umd.min.js",
+  "main": "bundles/common.umd.js",
   "repository": "https://github.com/RentDynamics/ng-common",
   "typings": "public_api.d.ts",
   "private": false,
