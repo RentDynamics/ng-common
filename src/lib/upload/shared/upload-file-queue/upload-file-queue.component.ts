@@ -12,9 +12,9 @@ import { UploadFilePreviewComponent } from '../upload-file-preview/upload-file-p
 })
 export class UploadFileQueueComponent implements OnInit {
 
-  private support = !!(FileReader && CanvasRenderingContext2D);
+  public support = !!(FileReader && CanvasRenderingContext2D);
 
-  constructor(private uploadComponent: UploadComponent) {}
+  constructor(public uploadComponent: UploadComponent) {}
 
   ngOnInit() {
 

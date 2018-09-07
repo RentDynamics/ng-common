@@ -10,7 +10,7 @@ import { UploadComponent } from '../../upload.component';
 })
 export class UploadFileProgressBarComponent implements OnInit {
 
-  constructor(private uploadComponent: UploadComponent) {}
+  constructor(public uploadComponent: UploadComponent) {}
 
   ngOnInit() {
   }

@@ -25,9 +25,9 @@ import { UploadComponent } from '../../upload.component';
 })
 export class UploadFileDropZoneComponent implements OnInit, UploadChildComponent {
 
-  private hasDropZoneOver: boolean = false;
+  public hasDropZoneOver: boolean = false;
 
-  constructor(private uploadComponent: UploadComponent) {}
+  constructor(public uploadComponent: UploadComponent) {}
 
   ngOnInit() {
   }
