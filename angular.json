@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "core": {
+    "common": {
       "root": ".",
       "sourceRoot": "./src",
       "projectType": "library",
@@ -44,5 +44,5 @@
       }
     }
   },
-  "defaultProject": "core"
+  "defaultProject": "common"
 }

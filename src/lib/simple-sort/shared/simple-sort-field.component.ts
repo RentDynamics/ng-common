@@ -12,11 +12,11 @@ export class SimpleSortFieldComponent {
   @Input('rd-simple-sort-field') sortField: string;
 
   private elem: HTMLElement;
-  private get reverseSortField (){
+  public get reverseSortField (){
     return `-${this.sortField}`;
   }
 
-  constructor(elementRef: ElementRef, private simpleSort: SimpleSortDirective) {
+  constructor(elementRef: ElementRef, public simpleSort: SimpleSortDirective) {
     this.elem = elementRef.nativeElement;
   }
 

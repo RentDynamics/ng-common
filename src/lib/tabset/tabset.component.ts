@@ -11,7 +11,7 @@ import { TabNavComponent } from './tab-nav';
 export class TabsetComponent implements OnInit {
     @Output() selected = new EventEmitter();
 
-    private tabs: TabComponent[] = [];
+    public tabs: TabComponent[] = [];
 
     constructor() {
 

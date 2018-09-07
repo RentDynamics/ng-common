@@ -13,7 +13,7 @@ import { UploadComponent } from '../../upload.component';
 export class UploadFileSelectButtonComponent implements OnInit {
   @Input() multiple: boolean;
 
-  constructor(private uploadComponent: UploadComponent) {}
+  constructor(public uploadComponent: UploadComponent) {}
 
   ngOnInit() {
   }

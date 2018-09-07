@@ -1,5 +1,5 @@
 /*
- * Public API Surface of core
+ * Public API Surface of common
  */
 
 export * from './lib/index';

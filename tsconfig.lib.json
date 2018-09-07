@@ -12,7 +12,11 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "types": [
-      "jssha"
+      "jssha",
+      "bootstrap",
+      "fullcalendar",
+      "jquery",
+      "toastr"
     ],
     "lib": [
       "dom",

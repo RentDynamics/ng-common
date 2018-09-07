@@ -17,8 +17,8 @@
             <td>
               {{item.file.name}}
             </td>
-            <td *ngIf="uploadComponent.uploader.isHTML5" nowrap>0.00 MB</td>
-            <td *ngIf="uploadComponent.uploader.isHTML5">
+            <td nowrap>0.00 MB</td>
+            <td>
                 <div class="progress" style="margin-bottom: 0;">
                   <!-- todo: switch out the following for rd-upload-file-progress-bar component (once rd-upload-file-progress-bar component is ready) -->
                   <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>

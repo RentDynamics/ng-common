@@ -16,9 +16,9 @@ export class UploadFilePreviewComponent implements OnInit, DoCheck, OnDestroy {
     @Input() uploaderQueueItem: any = null;
 
     private elem: HTMLElement;
-    private support = !!(FileReader && CanvasRenderingContext2D);
+    public support = !!(FileReader && CanvasRenderingContext2D);
 
-    constructor(@Optional() private uploadComponent: UploadComponent, private changeDetectorRef: ChangeDetectorRef, elementRef: ElementRef) {
+    constructor(@Optional() public uploadComponent: UploadComponent, private changeDetectorRef: ChangeDetectorRef, elementRef: ElementRef) {
         this.elem = elementRef.nativeElement;
     }
 

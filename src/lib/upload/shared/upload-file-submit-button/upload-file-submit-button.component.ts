@@ -15,7 +15,7 @@ import { UploadComponent } from '../../upload.component';
 })
 export class UploadFileSubmitButtonComponent implements OnInit {
 
-  constructor(private uploadComponent: UploadComponent) {}
+  constructor(public uploadComponent: UploadComponent) {}
 
   ngOnInit() {
   }

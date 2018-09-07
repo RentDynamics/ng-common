@@ -5,7 +5,11 @@
     "types": [
       "jasmine",
       "node",
-      "jssha"
+      "jssha",
+      "bootstrap",
+      "fullcalendar",
+      "jquery",
+      "toastr"
     ]
   },
   "files": [
