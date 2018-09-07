@@ -17,6 +17,8 @@ module.exports = function (config) {
     files: [
       require('path').join(__dirname, './node_modules/jssha/src/sha.js'),
       require('path').join(__dirname, '../../node_modules/jssha/src/sha.js'),
+      // require('path').join(__dirname, './node_modules/fullcalendar/dist/fullcalendar.js'),
+      // require('path').join(__dirname, '../../node_modules/jssha/src/sha.js'),
     ],
     client: {
       args: config.grep ? ['--grep', config.grep] : [],

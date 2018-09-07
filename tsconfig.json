@@ -12,10 +12,6 @@
     "target": "es5",
     "skipLibCheck": false,
     "types": [
-      "bootstrap",
-      "fullcalendar",
-      "jquery",
-      "toastr"
     ],
     "typeRoots": [
       "node_modules/@types"
