@@ -19,7 +19,6 @@ import { ModalComponent, ModalShowButton, ModalHideButton, ModalToggleButton,
 import { LoadingIndicatorModule } from './loading-indicator/index';
 import { SimpleSortModule } from './simple-sort/index';
 import { Toast } from './toast/index';
-// import { FullcalendarModule } from './fullcalendar/fullcalendar.module';
 import { IFrameModule } from './iframe/iframe.module'
 
 @NgModule({
@@ -58,7 +57,6 @@ import { IFrameModule } from './iframe/iframe.module'
         UploadFileProgressBarComponent, UploadFileSelectButtonComponent,
         UploadFileSubmitButtonComponent,
         SimpleSortModule,
-        // FullcalendarModule,
         IFrameModule,
         LoadingIndicatorModule,
     ],
