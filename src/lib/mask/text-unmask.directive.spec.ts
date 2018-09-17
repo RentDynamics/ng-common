@@ -10,7 +10,7 @@ import { RdAngularMaskModule } from './mask.module';
 import { TextUnmaskDirective } from './text-unmask.directive';
 import { REGEX_MASK } from './regex-mask';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormGroup } from '@angular/forms/src/model';
+import { FormGroup } from '@angular/forms';
 
 
 describe('TextUnmaskDirective', () => {
