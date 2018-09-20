@@ -19,14 +19,6 @@
     "lib": [
       "es2017",
       "dom"
-    ],
-    "paths": {
-      "core": [
-        "dist/core"
-      ],
-      "core/*": [
-        "dist/core/*"
-      ]
-    }
+    ]
   }
 }
