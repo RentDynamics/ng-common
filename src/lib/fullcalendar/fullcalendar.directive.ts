@@ -5,6 +5,7 @@ import {
 import * as moment from 'moment';
 
 import { extend, equals } from '@rd/core';
+import 'fullcalendar';
 
 @Directive({
   selector: '[rdFullcalendar]',

@@ -14,7 +14,6 @@
     "types": [
       "jssha",
       "bootstrap",
-      "fullcalendar",
       "jquery",
       "toastr"
     ],
