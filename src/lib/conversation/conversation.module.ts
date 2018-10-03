@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ConversationComposerModule } from './conversation-composer/conversation-composer.module';
 import { ConversationListModule } from './conversation-list/conversation-list.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { ConversationListModule } from './conversation-list/conversation-list.mo
   exports: [
     CommonModule,
     ConversationComposerModule,
-    ConversationListModule
+    ConversationListModule,
+    HttpClientModule
   ],
   providers: []
 })
