@@ -1,0 +1,10 @@
+<div class="list-item-section-1">
+  <div *ngIf="listItem?.person?.lead && !listItem?.person?.resident" class="list-item-badge badge--lead">lead</div>
+  <div *ngIf="listItem?.person?.resident" class="list-item-badge badge--resident">res</div>
+  <div>{{listItem?.person.firstName}}&nbsp;{{listItem?.person?.lastName}}</div>
+  <div class="list-item-time-elapsed">10 sec ago <!-- todo: bring pipes and interfaces over from lead-mgmt repo -->
+  </div>
+</div>
+<div class="list-item-section-2">
+  <div class="list-item-indicator indicator--read"></div>{{listItem?.lastConversation?.msg}}
+</div>

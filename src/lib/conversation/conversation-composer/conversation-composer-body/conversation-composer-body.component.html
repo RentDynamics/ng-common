@@ -1,0 +1,5 @@
+<div *ngFor="let message of messages" class="chat__message">
+  <div [ngClass]="{'chat__received-msg': message.type === 'incoming',
+  'chat__sent-msg': message.type === 'outgoing' }">{{message.msg}}</div>
+  <div>{{message.created}}</div>
+</div>

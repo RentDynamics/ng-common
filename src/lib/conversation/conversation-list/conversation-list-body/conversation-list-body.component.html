@@ -1,0 +1,5 @@
+<cc-conversation-list-item *ngFor="let item of conversations" [listItem]="item"
+                           [ngClass]="{ 'list-item-selected': activeConversation && activeConversation.id === item.id }"
+                           (click)="setActiveConversation.emit(item)" class="chat__conversations-list-item">
+
+</cc-conversation-list-item>
