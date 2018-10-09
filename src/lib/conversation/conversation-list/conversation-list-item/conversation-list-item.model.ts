@@ -16,4 +16,21 @@ export class ConversationListItemModel implements ConversationListItem {
     return this.person.firstName + ' ' + this.person.lastName;
   }
 
+  // id?: number;
+  // lastSms?: Sms;
+  // lead?: any;
+  // leadId: number;
+  // phoneNumber: string;
+  // communityGroupId: number;
+  // unread: boolean;
+  // optedOut: boolean;
+  // smsConversationStatusId: number;
+  // defaultFromNumber?: string;
+  //
+  // isTyping?: boolean;
+  // isTypingAgent?: string;
+  // person?: PersonModel;
+  // taskId?: number;
+  // task?: Task;
+
 }

@@ -1,6 +1,9 @@
-  <form [formGroup]="form" class="select__wrapper" style="position: relative;">
-    <select formControlName="openOrClosedFc">
-      <option [value]="true">Open Conversations</option>
-      <option [value]="false">Closed Conversations</option>
-    </select>
-  </form>
+<div>{{listName}}</div> <!-- Swap title to "Text" when applicable -->
+<div class="chat__queue-totals--me">
+  <div>(2)</div>
+  <div class="chat__queue-totals--selected">me</div>
+</div>
+<div class="chat__queue-totals--all">
+  <div>(6)</div>
+  <div>new</div>
+</div>

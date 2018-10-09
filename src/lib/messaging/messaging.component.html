@@ -1,0 +1,38 @@
+<div class="content-1">
+
+  <div class="component-chat__header">
+    <!-- <cc-lead-card [value]="leadCard" (valueChange)="onLeadCardChange($event)"></cc-lead-card>
+    <cc-resident-card></cc-resident-card> -->
+  </div>
+
+  <div class="component-chat-content component-chat-content--card-closed-view">
+    <div class="chat__lists-wrapper">
+      <rd-chat-conversation-list [activeConversation]="activeConversation" [listName]="'Chat'"
+        (setActiveConversation)="setActiveConversation($event)"
+        class="chat__conversations-list">
+
+      </rd-chat-conversation-list>
+
+      <rd-sms-conversation-list [activeConversation]="activeConversation" [listName]="'Sms'"
+        (setActiveConversation)="setActiveConversation($event)"
+        class="chat__conversations-list">
+
+      </rd-sms-conversation-list>
+    </div>
+
+    <cc-conversation-composer *ngIf="true" [activeConversation]="activeConversation"
+      class="chat__conversations-composer">
+
+    </cc-conversation-composer>
+
+  </div>
+
+</div>
+
+<div class="content-2">
+
+  <!-- <cc-community-info></cc-community-info> -->
+
+</div>
+
+

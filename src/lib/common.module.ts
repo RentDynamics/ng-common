@@ -19,7 +19,7 @@ import { ModalComponent, ModalShowButton, ModalHideButton, ModalToggleButton,
 import { LoadingIndicatorModule } from './loading-indicator/index';
 import { SimpleSortModule } from './simple-sort/index';
 import { Toast } from './toast/index';
-import { IFrameModule } from './iframe/iframe.module'
+import { IFrameModule } from './iframe/iframe.module';
 
 @NgModule({
     declarations: [

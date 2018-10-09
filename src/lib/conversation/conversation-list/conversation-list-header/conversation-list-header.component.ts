@@ -8,6 +8,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class ConversationListHeaderComponent implements OnInit {
   @Input() filter;
+  @Input() listName: string;
   @Output() filterChange = new EventEmitter();
 
   form: FormGroup;

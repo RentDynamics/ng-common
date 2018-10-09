@@ -12,9 +12,7 @@ import { ConversationComposerFooterComponent } from './conversation-composer-foo
     CommonModule,
     ReactiveFormsModule
   ],
-  declarations: [ConversationComposerComponent, ConversationComposerHeaderComponent,
-    ConversationComposerBodyComponent, ConversationComposerFooterComponent],
-  exports: [ConversationComposerComponent, ConversationComposerHeaderComponent,
-    ConversationComposerBodyComponent, ConversationComposerFooterComponent]
+  declarations: [ConversationComposerComponent, ConversationComposerHeaderComponent, ConversationComposerBodyComponent, ConversationComposerFooterComponent],
+  exports: [ConversationComposerComponent, ConversationComposerHeaderComponent, ConversationComposerBodyComponent, ConversationComposerFooterComponent]
 })
 export class ConversationComposerModule { }

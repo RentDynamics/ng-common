@@ -12,9 +12,9 @@ import { ConversationListFooterComponent } from './conversation-list-footer/conv
     CommonModule,
     ReactiveFormsModule
   ],
-  declarations: [ConversationListComponent, ConversationListItemComponent,
-    ConversationListHeaderComponent, ConversationListBodyComponent, ConversationListFooterComponent],
-  exports: [ConversationListComponent, ConversationListItemComponent,
-    ConversationListHeaderComponent, ConversationListBodyComponent, ConversationListFooterComponent]
+  declarations: [ConversationListComponent, ConversationListItemComponent, ConversationListHeaderComponent,
+    ConversationListBodyComponent, ConversationListFooterComponent],
+  exports: [ConversationListComponent, ConversationListItemComponent, ConversationListHeaderComponent,
+    ConversationListBodyComponent, ConversationListFooterComponent]
 })
 export class ConversationListModule { }

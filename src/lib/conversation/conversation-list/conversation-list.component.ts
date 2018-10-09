@@ -4,21 +4,28 @@ import * as moment from 'moment';
 import {CoreApiService} from '@rd/core';
 import {flatMap, map, toArray} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
+import {of as observableOf} from 'rxjs';
+import {CoreApiSelector} from '@rd/core';
+import { InfiniteScrollService } from '../../infinite-scroll/infinite-scroll.service';
 
 @Component({
   selector: 'cc-conversation-list',
   templateUrl: './conversation-list.component.html',
-  styleUrls: ['./conversation-list.component.scss']
+  styleUrls: ['./conversation-list.component.scss'],
+  providers: [InfiniteScrollService]
 })
 export class ConversationListComponent implements OnInit {
   @Input() activeConversation: ConversationListItemModel;
   @Input() conversations: ConversationListItemModel[] = [];
   @Input() communityId = 20;
+  @Input() communityGroupId = 20;
   @Input() filter: { openOrClosedFc: boolean } = { openOrClosedFc: true };
+  @Input() listName: string = 'Chat';
   @Output() setActiveConversation = new EventEmitter<ConversationListItemModel>();
 
-  constructor(private coreApiSvc: CoreApiService, private httpClient: HttpClient) {
+  constructor(protected coreApiSvc: CoreApiService, protected httpClient: HttpClient,
+              protected infiniteScroll: InfiniteScrollService) {
   }
 
   ngOnInit() {
@@ -27,14 +34,8 @@ export class ConversationListComponent implements OnInit {
     });
   }
 
-  getConversations(openOrClosed): Observable<any> {
-    return this.httpClient.get(`/communities/${this.communityId}/conversations?filters=open=` + openOrClosed).pipe(
-      flatMap((results: any[]) => results),
-      map((result: any) => {
-        return new ConversationListItemModel(result.id, result.person, result.lastConversation, result.community);
-      }),
-      toArray()
-    );
+  getConversations(openOrClosed): Observable<ConversationListItemModel[]> {
+    return observableOf([]);
   }
 
   filterChange(newVal) {
