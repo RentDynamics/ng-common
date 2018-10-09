@@ -29,7 +29,7 @@ export class SmsConversationListComponent extends ConversationListComponent impl
   @Input() filter: { openOrClosedFc: boolean } = { openOrClosedFc: true };
   @Input() listName: string = 'Sms';
 
-  constructor(protected coreApiSvc: CoreApiService, protected httpClient: HttpClient, protected infiniteScroll: InfiniteScrollService) {
+  constructor(protected coreApiSvc: CoreApiService, protected httpClient: HttpClient, public infiniteScroll: InfiniteScrollService) {
     super(coreApiSvc, httpClient, infiniteScroll);
     this.infiniteScroll.pageSize = 100;
   }

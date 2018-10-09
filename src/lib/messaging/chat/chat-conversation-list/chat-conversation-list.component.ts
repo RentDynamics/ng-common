@@ -23,7 +23,7 @@ export class ChatConversationListComponent extends ConversationListComponent imp
   @Input() filter: { openOrClosedFc: boolean } = { openOrClosedFc: true };
   @Input() listName: string = 'Chat';
 
-  constructor(protected coreApiSvc: CoreApiService, protected httpClient: HttpClient, protected infiniteScroll: InfiniteScrollService) {
+  constructor(protected coreApiSvc: CoreApiService, protected httpClient: HttpClient, public infiniteScroll: InfiniteScrollService) {
     super(coreApiSvc, httpClient, infiniteScroll);
   }
 
