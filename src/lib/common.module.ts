@@ -7,11 +7,11 @@ import { RdAngularCoreModule } from '@rd/core';
 
 import { ExpandingListViewModule } from './expanding-list-view/index';
 import { TabsetModule } from './tabset/index';
-import { UploadModule } from './upload/index';
-import { ModalModule } from './modal/index';
+// import { UploadModule } from './upload/index';
+// import { ModalModule } from './modal/index';
 import { LoadingIndicatorModule } from './loading-indicator/index';
 import { SimpleSortModule } from './simple-sort/index';
-import { ToastModule } from './toast/index';
+// import { ToastModule } from './toast/index';
 import { IFrameModule } from './iframe/iframe.module';
 import { PipesModule } from './pipes';
 
@@ -39,10 +39,10 @@ import { PipesModule } from './pipes';
         LoadingIndicatorModule,
         TabsetModule,
         ExpandingListViewModule,
-        ModalModule,
-        UploadModule,
+        // ModalModule,
+        // UploadModule,
         PipesModule,
-        ToastModule,
+        // ToastModule,
     ],
     exports: [
         // ExpandingListViewComponent,
@@ -61,10 +61,10 @@ import { PipesModule } from './pipes';
         LoadingIndicatorModule,
         TabsetModule,
         ExpandingListViewModule,
-        ModalModule,
-        UploadModule,
+        // ModalModule,
+        // UploadModule,
         PipesModule,
-        ToastModule,
+        // ToastModule,
     ],
     providers: [
 
