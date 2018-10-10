@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, ViewChild, Inject } from '@angular/core';
 
 import { CoreApiService, CoreApiSelector } from '@rd/core';
-import { BootstrapModalComponent } from '../../modal/bootstrap-modal/bootstrap-modal.component';
+import { BootstrapModalComponent } from '@rd/common/src/lib/modal';
 import { FileUploader } from 'ng2-file-upload';
 
 // import { environment } from '../../../../environments/environment';

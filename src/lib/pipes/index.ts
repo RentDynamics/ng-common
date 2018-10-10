@@ -8,7 +8,7 @@ export * from './moment-format.pipe';
 export * from './moment-from-now-format.pipe';
 export * from './moment-humanize-duration-format.pipe';
 export * from './phone-number.pipe';
-export * from './safe-html.pipe';
+// export * from './safe-html.pipe';
 export * from './substring.pipe';
 export * from './sum.pipe';
 export * from './telephone.pipe';

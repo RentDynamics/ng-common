@@ -27,7 +27,8 @@ import { FileUploadModule } from 'ng2-file-upload';
     UploadFileQueueComponent,
     UploadFileSelectButtonComponent,
     UploadFileSubmitButtonComponent,
-    UploadComponent
+    UploadComponent,
+    FileUploadModule
   ],
   providers: []
 })

@@ -16,7 +16,7 @@ import { MomentFromNowFormatPipe } from './moment-from-now-format.pipe';
 import { HeaderChunkPipe } from './header-chunk.pipe';
 import { SumPipe } from './sum.pipe';
 import { TelephonePipe } from './telephone.pipe';
-import { SafeHtmlPipe, SafeStylesPipe } from './safe-html.pipe';
+// import { SafeHtmlPipe, SafeStylesPipe } from './safe-html.pipe';
 
 @NgModule({
   imports: [
@@ -37,8 +37,8 @@ import { SafeHtmlPipe, SafeStylesPipe } from './safe-html.pipe';
     HeaderChunkPipe,
     SumPipe,
     TelephonePipe,
-    SafeHtmlPipe,
-    SafeStylesPipe
+    // SafeHtmlPipe,
+    // SafeStylesPipe
   ],
   exports: [
     CommunityDisplayPipe,
@@ -55,8 +55,8 @@ import { SafeHtmlPipe, SafeStylesPipe } from './safe-html.pipe';
     HeaderChunkPipe,
     SumPipe,
     TelephonePipe,
-    SafeHtmlPipe,
-    SafeStylesPipe
+    // SafeHtmlPipe,
+    // SafeStylesPipe
   ]
 })
 export class PipesModule { }

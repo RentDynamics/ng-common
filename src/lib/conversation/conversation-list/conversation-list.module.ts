@@ -6,11 +6,13 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { ConversationListHeaderComponent } from './conversation-list-header/conversation-list-header.component';
 import { ConversationListBodyComponent } from './conversation-list-body/conversation-list-body.component';
 import { ConversationListFooterComponent } from './conversation-list-footer/conversation-list-footer.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InfiniteScrollModule,
   ],
   declarations: [ConversationListComponent, ConversationListItemComponent, ConversationListHeaderComponent,
     ConversationListBodyComponent, ConversationListFooterComponent],

@@ -10,7 +10,7 @@ export {RdAngularCommonModule} from './common.module';
 export * from './iframe/index';
 export * from './conversation/index';
 export * from './pipes/index';
-// export * from './photos/index';
+export * from './photos/index';
 export * from './imgix/index';
 export * from './infinite-scroll/index';
 export * from './messaging/index';
