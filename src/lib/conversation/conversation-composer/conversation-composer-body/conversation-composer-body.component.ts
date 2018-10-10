@@ -1,7 +1,7 @@
-import {Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges} from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import * as moment from 'moment';
-import {ConversationListItemModel} from '../../conversation-list/conversation-list-item/conversation-list-item.model';
-import {HttpClient} from '@angular/common/http';
+import { ConversationListItemModel } from '../../conversation-list/conversation-list-item/conversation-list-item.model';
+import { HttpClient } from '@angular/common/http';
 import { CoreApiService } from '@rd/core';
 
 @Component({
@@ -19,25 +19,27 @@ export class ConversationComposerBodyComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    if(this.activeConversation && this.activeConversation.lastConversation) {
+    if (this.activeConversation && this.activeConversation.lastConversation) {
       this.getMessages();
     }
   }
 
   ngOnChanges(newVals: SimpleChanges) {
     const activeConversationChange: SimpleChange = newVals['activeConversation'];
-    if(activeConversationChange && !activeConversationChange.isFirstChange() && activeConversationChange.currentValue){
+    if (activeConversationChange && !activeConversationChange.isFirstChange() && activeConversationChange.currentValue) {
       this.getMessages();
     }
   }
 
   getMessages() {
-    this.httpClient.get(`/communities/${this.communityId}/conversations/${this.activeConversation.lastConversation.id}/messages`)
-      .subscribe((results: any[]) => {
-        console.log('fake chat results!!', results);
-        /* todo: map to view model */
-        this.messages = results;
-      });
+    if (this.activeConversation && this.activeConversation.lastConversation) {
+      this.httpClient.get(`/communities/${this.communityId}/conversations/${this.activeConversation.lastConversation.id}/messages`)
+        .subscribe((results: any[]) => {
+          console.log('fake chat results!!', results);
+          /* todo: map to view model */
+          this.messages = results;
+        });
+    }
   }
 
 }

@@ -15,6 +15,20 @@ export interface Sms {
             id: number; leadId: number;
 }
 
+export interface Message {
+  id: number;
+  leadId?: number;
+  residentId?: number;
+  conversationStatusId: number;
+  taskId: number;
+  optedOut?: boolean;
+  communityGroupId: number;
+  unread: boolean;
+  optedIn?: boolean;
+  lastMessageId?: number;
+  lastMessage: Sms;
+}
+
 @Component({
   selector: 'rd-sms-conversation-list',
   templateUrl: './sms-conversation-list.component.html',

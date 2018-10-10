@@ -28,6 +28,14 @@ import {SmsConversationListComponent} from './sms/sms-conversation-list/sms-conv
     // SmsModule,
     // ChatModule
   ],
+  exports: [
+    ConversationComposerModule,
+    ConversationListModule,
+    InfiniteScrollModule,
+    MessagingComponent,
+    ChatConversationListComponent,
+    SmsConversationListComponent
+  ],
   providers: []
 })
 export class CommonMessagingModule { }
