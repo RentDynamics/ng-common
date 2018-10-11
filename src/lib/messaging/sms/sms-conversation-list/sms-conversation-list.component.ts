@@ -45,26 +45,33 @@ export class SmsConversationListComponent extends ConversationListComponent impl
 
   constructor(protected coreApiSvc: CoreApiService, protected httpClient: HttpClient, public infiniteScroll: InfiniteScrollService) {
     super(coreApiSvc, httpClient, infiniteScroll);
-    this.infiniteScroll.pageSize = 100;
+    this.infiniteScroll.pageSize = 25;
   }
 
-  getSelector(page: number) {
+  getSelector(page: number, filters?: any) {
     return new CoreApiSelector({
       endpoint: `/communityGroups/${this.communityGroupId}/smsConversations`,
       page: page,
-      pageSize: this.infiniteScroll.pageSize,
+      pageSize: 25,
       include: ['default_from_number', 'last_sms', 'lead__person'],
-      filters: this.filter,
+      filters: filters || {},
       orderBy: '-last_sms__sent_received_time'
     });
   }
 
+  // "{"defaultFromNumber":"9162627149","lead":null,"id":92,"optedIn":false,"lastSms":null,"optedOut":false,"taskId":null,"leadId":null,"phoneNumber":"9162627149","communityGroupId":20,"smsConversationStatusId":1,"lastSmsId":null,"unread":true}"
+  // "{"defaultFromNumber":"9162627149","lead":{"modified":null,"created":"2017-02-23T21:31:25.907Z","id":919083,"unqualifiedReasonTypeId":null,"person":{"middleName":null,"id":1301618,"maidenName":null,"created":"2017-02-23T21:34:46.237Z","firstName":"Sainth","lastName":"Largo"},"communityId":20,"phaseGroupId":20,"noAppointmentReasonTypeId":null,"createdById":3190,"personId":1301618,"modifiedById":null},"id":698,"optedIn":false,"lastSms":null,"optedOut":false,"taskId":null,"leadId":919083,"phoneNumber":"9168072572","communityGroupId":20,"smsConversationStatusId":1,"lastSmsId":null,"unread":true}"
 
   getConversations(openOrClosed): Observable<ConversationListItemModel[]> {
-    return this.coreApiSvc.get(`/communityGroups/${this.communityGroupId}/smsConversations`).pipe(
+    return this.coreApiSvc.get(
+      `/communityGroups/${this.communityGroupId}/smsConversations?include=lead__person, last_sms, default_from_number, community_group`
+      ).pipe(
       flatMap((results: Sms[]) => results),
       map((result: any) => {
-        return result; // new ConversationListItemModel(result.id, result.person, result.lastConversation, result.community);
+        console.log('result', result);
+        return new ConversationListItemModel({ id: result.id, person: result.lead ? result.lead.person : null,
+          lastMessage: result.lastSms, communityGroup: { id: result.communityGroupId, name: 'Aztec Springs'},
+          conversationStatusId: result.smsConversationStatusId });
       }),
       toArray()
     );

@@ -1,8 +1,6 @@
 import * as moment from 'moment';
 
-import {ConversationListItem} from './conversation-list-item';
-
-export class ConversationListItemModel {
+export class ConversationModel {
   id?: number;
   agentId?: number;
   personId: number;
@@ -15,7 +13,6 @@ export class ConversationListItemModel {
   leadId?: number;
   phoneNumber: string;
   communityGroupId: number;
-  communityGroup?: { id: number, name: string };
   unread: boolean;
   optedOut: boolean;
   conversationStatusId: number;
@@ -25,7 +22,7 @@ export class ConversationListItemModel {
   taskId?: number;
   task?: any;
 
-  constructor(protected domainModel: any) {
+  constructor(protected domainModel) {
     for (const prop in domainModel) {
       if (prop) {
         this[prop] = domainModel[prop];

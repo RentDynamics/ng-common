@@ -31,7 +31,8 @@ export class ChatConversationListComponent extends ConversationListComponent imp
     return this.httpClient.get(`/communities/${this.communityId}/conversations?filters=open=` + openOrClosed).pipe(
       flatMap((results: any[]) => results),
       map((result: any) => {
-        return new ConversationListItemModel(result.id, result.person, result.lastConversation, result.community);
+        return new ConversationListItemModel({ id: result.id, person: result.person,
+          lastMessage: result.lastConversation, communityGroup: { id: this.communityGroupId, name: 'Aztec Springs'}, });
       }),
       toArray()
     );

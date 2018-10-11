@@ -19,7 +19,7 @@ export class ConversationComposerBodyComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    if (this.activeConversation && this.activeConversation.lastConversation) {
+    if (this.activeConversation && this.activeConversation.lastMessage) {
       this.getMessages();
     }
   }
@@ -32,8 +32,8 @@ export class ConversationComposerBodyComponent implements OnInit, OnChanges {
   }
 
   getMessages() {
-    if (this.activeConversation && this.activeConversation.lastConversation) {
-      this.httpClient.get(`/communities/${this.communityId}/conversations/${this.activeConversation.lastConversation.id}/messages`)
+    if (this.activeConversation && this.activeConversation.lastMessage) {
+      this.httpClient.get(`/communities/${this.communityId}/conversations/${this.activeConversation.lastMessage.id}/messages`)
         .subscribe((results: any[]) => {
           console.log('fake chat results!!', results);
           /* todo: map to view model */
