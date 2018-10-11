@@ -1,0 +1,32 @@
+<rd-bootstrap-modal class='modal--fullScreen' #photoModal [options]="modalOptions" (hidden)="onHidden($event)">
+  <div rd-bootstrap-modal-header>
+    <button type="button" (click)="photoModal.hide()" class="close"><i class="stream stream-close"></i></button>
+    <h4 class="modal-title">Photo</h4>
+  </div>
+  <div rd-bootstrap-modal-body>
+    <div *ngIf="!image">
+      <rd-upload class="row" [uploader]="uploader" (onCompleteAll)="onUploadSuccess($event)">
+        <div class="col-md-12">
+          <h3>Upload photo</h3>
+          <rd-upload-file-drop-zone class="uploaddroparea">
+            Drag and drop photo here
+          </rd-upload-file-drop-zone>
+          <!--<rd-upload-file-preview *ngIf="uploader.queue[0]" [uploaderQueueItem]="uploader.queue[0]"></rd-upload-file-preview>-->
+          <input type="file" ng2FileSelect [uploader]="uploader" />
+        </div>
+      </rd-upload>
+    </div>
+
+    <div *ngIf="image">
+      <div class="crossSell__imageManage">
+        <img [src]="imgixSvc.getImageUrl(image?.fileUrl, 250, 180)" (click)="launchImageOverlay(image.fileUrl)" />
+        <div class="btn btn-danger btn-xs" (click)="deleteImage(image.id)">Delete</div>
+      </div>
+
+      <div *ngIf="imageOverlay" class="crossSell__imageOverlay" (click)="imageOverlay = false">
+        <i class="stream stream-close"></i>
+        <img [src]="imageOverlayUrl" alt="" />
+      </div>
+    </div>
+  </div>
+</rd-bootstrap-modal>

@@ -1,1 +1,16 @@
+export * from './pipes.module';
+export * from './call-center-agent-display.pipe';
+export * from './community-display.pipe';
+export * from './filter.pipe';
+export * from './header-chunk.pipe';
+export * from './moment-calendar-format.pipe';
+export * from './moment-format.pipe';
+export * from './moment-from-now-format.pipe';
+export * from './moment-humanize-duration-format.pipe';
+export * from './phone-number.pipe';
+// export * from './safe-html.pipe';
+export * from './substring.pipe';
+export * from './sum.pipe';
 export * from './telephone.pipe';
+export * from './texting-format.pipe';
+// export * from './utc-to-local.pipe';

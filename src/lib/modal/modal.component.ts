@@ -66,7 +66,7 @@ export class ModalComponent implements OnInit, AfterViewInit, Modal, OnDestroy {
 
         $(this.elem).on('loaded.bs.modal', () => {
             this.loaded.emit(null);
-        })
+        });
     }
 
     toggle() {

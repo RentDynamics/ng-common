@@ -19,6 +19,15 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@rd/common": [
+        "src/lib/index.ts"
+      ],
+      "@rd/common/*": [
+        // "src/lib/*",
+        "./*"
+      ]
+    }
   }
 }

@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+  <div class="chat__conversations-composer-message">
+    <textarea class="" placeholder="Type a message..." formControlName="msg"></textarea>
+  </div>
+  <div class="chat__conversations-composer-actions">
+    <div class="chat__conversations-composer-media">
+      <i class="stream stream-smiley-smile-1"></i>
+      <i class="stream stream-camera-2"></i>
+      <i class="stream stream-bubble-chat-text-2"></i>
+    </div>
+    <div class="chat__conversations-composer-buttons">
+      <button class="btn btn-default">Send &amp; Close</button>
+      <button class="btn btn-success" type="submit">Send</button>
+    </div>
+  </div>
+</form>

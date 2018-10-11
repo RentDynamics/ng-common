@@ -1,0 +1,18 @@
+<cc-conversation-list-header [filter]="filter" [listName]="listName"
+                             (filterChange)="filterChange($event)" class="chat__conversations-list-header">
+
+</cc-conversation-list-header>
+
+<!-- <cc-conversation-list-body [conversations]="conversations" [activeConversation]="activeConversation"
+                           (setActiveConversation)="setActiveConversation.emit($event)"
+                           class="chat__conversations-list-items">
+
+</cc-conversation-list-body> -->
+
+<cc-conversation-list-body [conversations]="conversations" [activeConversation]="activeConversation"
+                           (setActiveConversation)="setActiveConversation.emit($event)" class="chat__conversations-list-items"
+                           infinite-scroll [infiniteScrollDistance]="3" [scrollWindow]="false"
+                           [infiniteScrollDisabled]="infiniteScroll.disableNext$ | async"
+                           (scrolled)="nextPage()">
+
+</cc-conversation-list-body>

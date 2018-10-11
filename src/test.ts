@@ -23,12 +23,12 @@ import {
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
 
-import 'script-loader!../node_modules/moment/moment.js';
-import 'script-loader!../node_modules/moment-range/dist/moment-range.js';
-import 'script-loader!../node_modules/moment-timezone/builds/moment-timezone-with-data.min.js';
-import 'script-loader!../node_modules/jquery/dist/jquery.min.js';
-import 'script-loader!../node_modules/bootstrap/dist/js/bootstrap.min.js';
-import 'script-loader!../node_modules/fullcalendar/dist/fullcalendar.js';
+// import 'script-loader!../node_modules/moment/moment.js';
+// import 'script-loader!../node_modules/moment-range/dist/moment-range.js';
+// import 'script-loader!../node_modules/moment-timezone/builds/moment-timezone-with-data.min.js';
+// import 'script-loader!../node_modules/jquery/dist/jquery.min.js';
+// import 'script-loader!../node_modules/bootstrap/dist/js/bootstrap.min.js';
+// import 'script-loader!../node_modules/fullcalendar/dist/fullcalendar.js';
 
 declare const require: any;
 

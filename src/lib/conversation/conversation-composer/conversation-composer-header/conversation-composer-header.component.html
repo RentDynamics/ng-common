@@ -1,0 +1,12 @@
+<div class="chat__conversations-composer-close"
+     *ngIf="activeConversation?.lastMessage?.open"
+     (click)="closeConversation.emit(null)">
+  <i class="stream stream-check-22"></i>&nbsp;Close</div>
+<div class="chat__conversations-composer-close"
+     *ngIf="!activeConversation?.lastMessage?.open"
+     (click)="openConversation.emit(null)">
+  <i class="stream stream-check-22"></i>&nbsp;Open</div>
+<div class="chat__conversations-composer-name">
+  <i class="stream stream-generic-user-1"></i>&nbsp;{{activeConversation?.personFullName}}</div>
+<div class="chat__conversations-composer-community">
+  {{activeConversation?.communityGroup?.name}}</div>
