@@ -80,10 +80,10 @@ describe('ConversationComposerBodyComponent', () => {
   it('getMessages should invoke httpClient get', inject([HttpClient], (httpClient: HttpClient) => {
     /* Arrange */
     const spy = spyOn(httpClient, 'get').and.returnValue(observableOf({ id: 1, data: [] }));
-    component.activeConversation = new ConversationListItemModel(100,
+    component.activeConversation = new ConversationListItemModel({ id: 100, person:
       {firstName: '', lastName: '', lead: true, resident: false },
-      {conversationId: 2, created: moment(), open: false, id: 4, read: true, msg: 'jfsdaklfjsdkal'},
-      {id: 2, name: 'dfsa'});
+      lastMessage: {conversationId: 2, created: moment(), open: false, id: 4, read: true, msg: 'jfsdaklfjsdkal'},
+      communityGroup: {id: 2, name: 'dfsa'} });
     /* Act */
     component.getMessages();
     /* Assert */
