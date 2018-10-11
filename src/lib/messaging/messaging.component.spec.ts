@@ -64,10 +64,10 @@ describe('MessagingComponent', () => {
   }));
 
   it('should set activeConversation on setActiveConversation', inject([LocalStorage], (localStorage: LocalStorage) => {
-    const mockValue = new ConversationListItemModel(100,
+    const mockValue = new ConversationListItemModel({ id: 100, person:
       {firstName: '', lastName: '', lead: true, resident: false },
-      {conversationId: 2, created: moment(), open: false, id: 4, read: true, msg: 'jfsdaklfjsdkal'},
-      {id: 2, name: 'dfsa'});
+      lastMessage: {conversationId: 2, created: moment(), open: false, id: 4, read: true, msg: 'jfsdaklfjsdkal'},
+      communityGroup: {id: 2, name: 'dfsa'} });
     const spyLocalStorage = spyOn(localStorage, 'setItem').and.returnValue(observableOf(mockValue));
     /* Act */
     component.setActiveConversation(mockValue);

@@ -49,10 +49,10 @@ describe('ConversationComposerBodyComponent', () => {
   it('should invoke getMessages onInit if activeConversation is defined', inject([HttpClient], (httpClient: HttpClient) => {
     /* Arrange */
     const spy = spyOn(component, 'getMessages').and.callFake(() => {});
-    component.activeConversation = new ConversationListItemModel(100,
+    component.activeConversation = new ConversationListItemModel({ id: 100, person:
       {firstName: '', lastName: '', lead: true, resident: false },
-      {conversationId: 2, created: moment(), open: false, id: 4, read: true, msg: 'jfsdaklfjsdkal'},
-      {id: 2, name: 'dfsa'});
+      lastMessage: {conversationId: 2, created: moment(), open: false, id: 4, read: true, msg: 'jfsdaklfjsdkal'},
+      communityGroup: {id: 2, name: 'dfsa'} });
     /* Act */
     component.ngOnInit();
     /* Assert */
