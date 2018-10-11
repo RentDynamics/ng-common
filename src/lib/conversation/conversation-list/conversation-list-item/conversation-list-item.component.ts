@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {ConversationListItem} from './conversation-list-item';
+import { ConversationListItemModel } from './conversation-list-item.model';
 
 @Component({
   selector: 'cc-conversation-list-item',
@@ -8,7 +8,7 @@ import {ConversationListItem} from './conversation-list-item';
   encapsulation: ViewEncapsulation.None
 })
 export class ConversationListItemComponent implements OnInit {
-  @Input() listItem: ConversationListItem;
+  @Input() listItem: ConversationListItemModel;
 
   constructor() { }
 
