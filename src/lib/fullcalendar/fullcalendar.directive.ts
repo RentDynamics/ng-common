@@ -61,6 +61,12 @@ export class FullcalendarDirective implements AfterViewInit, OnChanges, OnDestro
   }
 
   ngOnDestroy() {
-    $(this.elem).fullCalendar('destroy');
+    if (this.elem && window['jQuery'] && $(this.elem) && $(this.elem).fullCalendar) {
+      try {
+        $(this.elem).fullCalendar('destroy');
+      } catch (err) {
+        console.log(err);
+      }
+    }
   }
 }
