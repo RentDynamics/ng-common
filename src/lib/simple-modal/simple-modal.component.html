@@ -1,0 +1,10 @@
+<div class="modal__overlay" [class.open]="modalOpen ? modalOpen : false" (click)="closeModal()"></div>
+<div class="modal" [class.open]="modalOpen ? modalOpen : false">
+  <div class="modal__header">
+    <div class="modal__title">{{title}}</div>
+    <div class="modal__close" (click)="closeModal()"><i class="icon--x"></i></div>
+  </div>
+  <div class="modal__body">
+    <ng-content></ng-content>
+  </div>
+</div>

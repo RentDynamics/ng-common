@@ -14,3 +14,4 @@ export * from './photos/index';
 export * from './imgix/index';
 export * from './infinite-scroll/index';
 export * from './messaging/index';
+export * from './simple-modal/index';

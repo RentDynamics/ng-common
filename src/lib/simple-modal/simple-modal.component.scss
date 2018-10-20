@@ -1,0 +1,363 @@
+/* TODO: move these style variables somewhere more re-usable */
+/* Variables */
+$small-screen-up: 901px !default;
+$medium-screen-up: 1201px !default;
+$large-screen-up: 1211px !default;
+
+$small-screen: 900px !default;
+$medium-screen: 1200px !default;
+$large-screen: 1210px !default;
+
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+// Colors
+$blue: #1fb6ff;
+$purple: #7e5bef;
+$green: #13ce66;
+$yellow: #ffc82c;
+$red: #ff4949;
+$white: #ffffff;
+
+$night: #1f2d3d;
+$slate: #3c4858;
+$silver: #8492a6;
+$smoke: #d3dce6;
+$whitesmoke: #f5f5f5;
+$snow: #e5e9f2;
+
+$excel: #157b18;
+$pdf: #bc2229;
+
+$color-lighten-amount: 10%;
+$color-darken-amount: 10%;
+
+$light-blue: #85d7ff;
+$light-purple: #a389f4;
+$light-green: #29eb7f;
+$light-yellow: #ffd55f;
+
+$dark-blue: #009eeb;
+$dark-purple: #592dea;
+$dark-green: #0f9f4f;
+$dark-yellow: #f8b700;
+
+$light-blue: lighten($blue, 20%);
+$light-purple: lighten($purple, 10%);
+$light-green: lighten($green, 10%);
+$light-yellow: lighten($yellow, 10%);
+$light-red: lighten($red, 10%);
+$light-smoke: lighten($smoke, 10%);
+
+$dark-blue: darken($blue, 10%);
+$dark-purple: darken($purple, 10%);
+$dark-green: darken($green, 10%);
+$dark-yellow: darken($yellow, 10%);
+$dark-red: darken($red, 10%);
+
+$primary-color: $blue;
+$trans: transparent;
+
+$base-gradient: linear-gradient(135deg, $blue 0%, $purple 100%);
+
+// Font weights
+$light: 100;
+$regular: 400;
+$bold: 700;
+
+// Body
+$body-bg: $white;
+$body-color: $slate;
+
+// Links
+$link-color: $blue;
+$link-hover-color: $dark-blue;
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+// Fonts
+$font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+$headings-color: $night;
+
+// Radius
+$radius: 4px;
+
+// Border
+$border-width: 2px;
+
+// Navigation
+$nav-bg: $base-gradient;
+$nav-color: $white;
+$nav-width: 240px;
+$nav-padding: 24px;
+$nav-font-size-normal: 16px;
+$nav-font-size-large: 24px;
+$nav-link-padding: 10px;
+
+$nav-trigger-small-height: 56px;
+$nav-trigger-medium-width: 56px;
+
+/* ---------------------------------- */
+/* Utilities */
+
+@mixin hover-focus {
+    &:focus,
+    &:hover {
+      @content
+    }
+};
+
+@mixin animation-subtle {
+    //transition: all linear 80ms;
+    transition: all ease-in-out 0.08s;
+};
+
+@mixin animation-emphasized {
+    transition: all ease-in-out 0.2s;
+};
+
+@mixin animation-zoom {
+    animation: zoom 0.2s ease-in-out both;
+}
+
+@mixin gradient($color-1, $color-2) {
+    background: linear-gradient(135deg, $color-1 0%, $color-2 100%);
+}
+
+// Float utilities
+.pull--right {
+    float: right !important;
+}
+.pull--left {
+    float: left !important;
+}
+
+// Add to parent to clearfix
+.clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Animations
+@keyframes zoom {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* ---------------------------------- */
+/* _typography.scss */
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0px; //24px;
+    margin-bottom: 8px;
+    color: $headings-color;
+    font-weight: bold;
+  }
+  
+  h1 {
+    font-size: 32px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  h3 {
+    font-size: 16px;
+  }
+  
+  p {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+  
+  ol,
+  ul,
+  dl {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+  
+  ol ol,
+  ul ul,
+  ol ul,
+  ul ol {
+    margin-bottom: 0;
+  }
+  
+  
+  a {
+    color: $link-color;
+    text-decoration: $link-decoration;
+  
+    @include hover-focus {
+      color: $link-hover-color;
+      text-decoration: $link-hover-decoration;
+    }
+  }
+  
+  pre, code {
+    background-color: $snow;
+    border-radius: $radius;
+    color: $red;
+    padding: 0 4px;
+    display: inline;
+    margin: 0 4px 0 0;
+  }
+  
+  .pageTitle {
+    @extend h1;
+    margin-top: 0;
+  }
+  
+  .subheader {
+    font-size: 0.9em;
+    color: $silver;
+    padding-bottom: 8px;
+  }
+  
+  .text--center {
+    text-align: center !important;
+  }
+  .text--right {
+    text-align: right !important;
+  }
+  .text--left {
+    text-align: left !important;
+  }
+
+
+/* ---------------------------------- */
+
+
+.modal {
+    //display: none;
+    background: $white;
+    padding: 40px;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    overflow-y: auto;
+    visibility: hidden;
+    backface-visibility: hidden;
+    max-width: $large-screen;
+    margin: auto;
+    transform: translateY(200px);
+    @include animation-emphasized;
+
+    @media #{$small-and-down} {
+        padding: 16px;
+    }
+
+    &.open {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .modal__border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: $base-gradient;
+        display: none;
+    }
+    
+    .modal__header {
+        margin-bottom: 16px;
+        .modal__title {
+            @extend h1;
+            display: inline;
+            line-height: 56px;
+
+            @media #{$small-and-down} {
+                font-size: 24px;
+                line-height: 40px;
+            }
+        }
+        .modal__close {
+            float: right;
+            display: inline-block;
+            background: $snow;
+            color: $silver;
+            width: 56px;
+            height: 56px;
+            line-height: 56px;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 32px;
+            border-radius: 50%;
+            padding-top: 2px;
+            @include animation-subtle;
+
+            @include hover-focus {
+                cursor: pointer;
+                color: $white;
+                background-color: $slate;
+            }
+
+            @media #{$small-and-down} {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+                line-height: 40px;
+            }
+        }
+    }
+
+    .modal__body {
+        //background: $snow;
+    }
+
+}
+
+.modal__overlay {
+    opacity: 0;
+    visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 9;
+    background: $base-gradient;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include animation-emphasized;
+
+    &.open {
+        display: block;
+        opacity: 0.7;
+        visibility: visible;
+
+    }
+}
+
+body.modalOpen {
+    overflow-y: hidden;
+}
