@@ -20,7 +20,9 @@
     "commit": "git-cz",
     "test": "ng t --code-coverage --watch false",
     "prepush": "npm test",
-    "semantic-release": "cd ./dist/common && semantic-release"
+    "semantic-release": "cd ./dist/common && semantic-release",
+    "package": "ng b && cd dist/common/ && rm -rf rd-common-0.0.0-development.tgz && npm pack",
+    "develop": "npm run package && cd ../contact-center/ && npm i --save ../ng-common/dist/common/rd-common-0.0.0-development.tgz"
   },
   "readme": "README.md",
   "config": {
