@@ -6,7 +6,8 @@ $large-screen-up: 1211px !default;
 
 $small-screen: 900px !default;
 $medium-screen: 1200px !default;
-$large-screen: 1210px !default;
+// $large-screen: 1210px !default;
+$large-screen: 1470px !default;
 
 $medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
 $large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
@@ -105,6 +106,7 @@ $nav-trigger-medium-width: 56px;
 
 /* ---------------------------------- */
 /* Utilities */
+// @import 'https://s3.amazonaws.com/icomoon.io/67986/Admin/style.css?9g3pb3';
 
 @mixin hover-focus {
     &:focus,
@@ -248,8 +250,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ---------------------------------- */
 
-
-.modal {
+.simple__modal {
     //display: none;
     background: $white;
     padding: 40px;
@@ -279,7 +280,7 @@ h1, h2, h3, h4, h5, h6 {
         transform: translateY(0);
     }
 
-    .modal__border {
+    .simple__modal__border {
         position: absolute;
         top: 0;
         left: 0;
@@ -289,9 +290,9 @@ h1, h2, h3, h4, h5, h6 {
         display: none;
     }
     
-    .modal__header {
+    .simple__modal__header {
         margin-bottom: 16px;
-        .modal__title {
+        .simple__modal__title {
             @extend h1;
             display: inline;
             line-height: 56px;
@@ -301,7 +302,7 @@ h1, h2, h3, h4, h5, h6 {
                 line-height: 40px;
             }
         }
-        .modal__close {
+        .simple__modal__close {
             float: right;
             display: inline-block;
             background: $snow;
@@ -331,13 +332,13 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
-    .modal__body {
+    .simple__modal__body {
         //background: $snow;
     }
 
 }
 
-.modal__overlay {
+.simple__modal__overlay {
     opacity: 0;
     visibility: hidden;
     backface-visibility: hidden;
@@ -358,6 +359,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-body.modalOpen {
+body.simple__modal__open {
     overflow-y: hidden;
 }

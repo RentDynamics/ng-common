@@ -1,10 +1,17 @@
-<div class="modal__overlay" [class.open]="modalOpen ? modalOpen : false" (click)="closeModal()"></div>
-<div class="modal" [class.open]="modalOpen ? modalOpen : false">
-  <div class="modal__header">
-    <div class="modal__title">{{title}}</div>
-    <div class="modal__close" (click)="closeModal()"><i class="icon--x"></i></div>
+<!-- link to icons hosted on icomoon -->
+<link rel="stylesheet" href="https://s3.amazonaws.com/icomoon.io/67986/Admin/style.css?9g3pb3">
+
+<div class="simple__modal__overlay" [class.open]="modalOpen ? modalOpen : false" (click)="closeModal()"></div>
+<div class="simple__modal" [class.open]="modalOpen ? modalOpen : false">
+  <div class="simple__modal__header">
+    <div class="simple__modal__title">{{title}}</div>
+    <div class="simple__modal__close" (click)="closeModal()"><i class="icon--x"></i></div>
+    <ng-content select="[inject-modal-header]"></ng-content>
   </div>
-  <div class="modal__body">
+  <div class="simple__modal__body">
     <ng-content></ng-content>
+  </div>
+  <div class="simple__modal__footer">
+    <ng-content select="[inject-modal-footer]"></ng-content>
   </div>
 </div>

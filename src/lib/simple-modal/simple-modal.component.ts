@@ -31,7 +31,7 @@ export class SimpleModalComponent implements OnChanges {
   ngOnChanges(newVal: SimpleChanges) {
     // This adds a class to body to prevent scrolling in the background while the modal is open
     if (newVal['modalOpen'] && newVal['modalOpen'].currentValue === true) {
-      this.renderer.addClass(document.body, 'modalOpen');
+      this.renderer.addClass(document.body, 'simple__modal__open');
     }
   }
 
@@ -40,6 +40,6 @@ export class SimpleModalComponent implements OnChanges {
     this.close.emit(true);
 
     // This removes the scroll-preventing class from the body
-    this.renderer.removeClass(document.body, 'modalOpen');
+    this.renderer.removeClass(document.body, 'simple__modal__open');
   }
 }
