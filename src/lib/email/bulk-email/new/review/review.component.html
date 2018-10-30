@@ -1,0 +1,15 @@
+<div style="font-size: 20px;margin-bottom: 15px;font-weight: bold;text-align:center;"> <span style="font-size: 150%">{{recipientCount
+        || 0}}</span> people will receive this message</div>
+
+<rd-browser-mobile-preview [html]="compiledHtml" [subject]="message.subject" [communityId]="communityId" [personId]="personId"
+    [senderId]="senderId"></rd-browser-mobile-preview>
+
+<!--<rd-browser-mobile-preview [url]="'assets/templates/bulk-logo-inline.html'"-->
+<!--[model]="message" [communityId]="communityId" [personId]="personId" [senderId]="senderId"-->
+<!--(onCompile)="onCompile.emit($event)">-->
+<!--</rd-browser-mobile-preview>-->
+
+<!-- used for dynamic compilation -->
+<div [style.display]="'none'">
+    <div #dynamicContentPlaceholder></div>
+</div>

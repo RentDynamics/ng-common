@@ -1,0 +1,8 @@
+<span>Between</span>
+<rd-datepicker-combo-select [(ngModel)]="rangeStart" momentFormat="MM/DD/YY" [outputType]="DATE_TYPE_ENUM.STRING"
+    (onChange)="updateFilter($event)"></rd-datepicker-combo-select>
+<span>and</span>
+<rd-datepicker-combo-select [(ngModel)]="rangeEnd" momentFormat="MM/DD/YY" [min]="rangeStart" [outputType]="DATE_TYPE_ENUM.STRING"
+    (onChange)="updateFilter($event)"></rd-datepicker-combo-select>
+
+<div class="btn btn-link" style="padding: 0;" *ngIf="rangeStart || rangeEnd" (click)="clear()">Clear</div>

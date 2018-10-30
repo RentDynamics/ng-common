@@ -1,13 +1,13 @@
-const dollarSign: any = '$'
-const emptyString = ''
-const comma = ','
-const period = '.'
-const minus = '-'
-const minusRegExp = /-/
-const nonDigitsRegExp = /\D+/g
-const number = 'number'
-const digitRegExp = /\d/
-const caretTrap = '[]'
+const dollarSign: any = '$';
+const emptyString = '';
+const comma = ',';
+const period = '.';
+const minus = '-';
+const minusRegExp = /-/;
+const nonDigitsRegExp = /\D+/g;
+const number = 'number';
+const digitRegExp = /\d/;
+const caretTrap = '[]';
 
 export default function createNumberMask({
   prefix = dollarSign,
@@ -22,12 +22,12 @@ export default function createNumberMask({
   allowLeadingZeroes = false,
   integerLimit = null
 } = {}) {
-  const prefixLength = prefix && prefix.length || 0
-  const suffixLength = suffix && suffix.length || 0
-  const thousandsSeparatorSymbolLength = thousandsSeparatorSymbol && thousandsSeparatorSymbol.length || 0
+  const prefixLength = prefix && prefix.length || 0;
+  const suffixLength = suffix && suffix.length || 0;
+  const thousandsSeparatorSymbolLength = thousandsSeparatorSymbol && thousandsSeparatorSymbol.length || 0;
 
   function numberMask(rawValue = emptyString) {
-    const rawValueLength = rawValue.length
+    const rawValueLength = rawValue.length;
 
     if (
       rawValue === emptyString ||
@@ -41,18 +41,18 @@ export default function createNumberMask({
       return prefix.split(emptyString).concat(['0', decimalSymbol, digitRegExp]).concat(suffix.split(emptyString))
     }
 
-    const isNegative = (rawValue[0] === minus) && allowNegative
+    const isNegative = (rawValue[0] === minus) && allowNegative;
     //If negative remove "-" sign
     if(isNegative) {
       rawValue = rawValue.toString().substr(1)
     }
 
-    const indexOfLastDecimal = rawValue.lastIndexOf(decimalSymbol)
-    const hasDecimal = indexOfLastDecimal !== -1
+    const indexOfLastDecimal = rawValue.lastIndexOf(decimalSymbol);
+    const hasDecimal = indexOfLastDecimal !== -1;
 
-    let integer
-    let fraction
-    let mask
+    let integer;
+    let fraction;
+    let mask;
 
     // remove the suffix
     if (rawValue.slice(suffixLength * -1) === suffix) {
@@ -60,9 +60,9 @@ export default function createNumberMask({
     }
 
     if (hasDecimal && (allowDecimal || requireDecimal)) {
-      integer = rawValue.slice(rawValue.slice(0, prefixLength) === prefix ? prefixLength : 0, indexOfLastDecimal)
+      integer = rawValue.slice(rawValue.slice(0, prefixLength) === prefix ? prefixLength : 0, indexOfLastDecimal);
 
-      fraction = rawValue.slice(indexOfLastDecimal + 1, rawValueLength)
+      fraction = rawValue.slice(indexOfLastDecimal + 1, rawValueLength);
       fraction = convertToMask(fraction.replace(nonDigitsRegExp, emptyString))
     } else {
       if (rawValue.slice(0, prefixLength) === prefix) {
@@ -73,28 +73,28 @@ export default function createNumberMask({
     }
 
     if (integerLimit && typeof integerLimit === number) {
-      const thousandsSeparatorRegex = thousandsSeparatorSymbol === '.' ? '[.]' : `${thousandsSeparatorSymbol}`
-      const numberOfThousandSeparators = (integer.match(new RegExp(thousandsSeparatorRegex, 'g')) || []).length
+      const thousandsSeparatorRegex = thousandsSeparatorSymbol === '.' ? '[.]' : `${thousandsSeparatorSymbol}`;
+      const numberOfThousandSeparators = (integer.match(new RegExp(thousandsSeparatorRegex, 'g')) || []).length;
 
       integer = integer.slice(0, integerLimit + (numberOfThousandSeparators * thousandsSeparatorSymbolLength))
     }
 
-    integer = integer.replace(nonDigitsRegExp, emptyString)
+    integer = integer.replace(nonDigitsRegExp, emptyString);
 
     if (!allowLeadingZeroes) {
       integer = integer.replace(/^0+(0$|[^0])/, '$1')
     }
 
-    integer = (includeThousandsSeparator) ? addThousandsSeparator(integer, thousandsSeparatorSymbol) : integer
+    integer = (includeThousandsSeparator) ? addThousandsSeparator(integer, thousandsSeparatorSymbol) : integer;
 
-    mask = convertToMask(integer)
+    mask = convertToMask(integer);
 
     if ((hasDecimal && allowDecimal) || requireDecimal === true) {
       if (rawValue[indexOfLastDecimal - 1] !== decimalSymbol) {
         mask.push(caretTrap)
       }
 
-      mask.push(decimalSymbol, caretTrap)
+      mask.push(decimalSymbol, caretTrap);
 
       if (fraction) {
         if (typeof decimalLimit === number) {
@@ -129,7 +129,7 @@ export default function createNumberMask({
     return mask
   }
 
-  numberMask['instanceOf'] = 'createNumberMask'
+  numberMask['instanceOf'] = 'createNumberMask';
 
   return numberMask
 }

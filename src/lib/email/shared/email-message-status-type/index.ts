@@ -1,0 +1,1 @@
+export { EMAIL_MESSAGE_STATUS_TYPE } from './email-message-status-type.enum';

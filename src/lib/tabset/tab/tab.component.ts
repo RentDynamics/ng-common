@@ -27,7 +27,7 @@ export class TabComponent implements OnInit, OnDestroy {
   @Output() init = new EventEmitter();
   @Output() destroy = new EventEmitter();
 
-  private active: boolean = false;
+  public active: boolean = false;
 
   constructor(private tabsetComponent: TabsetComponent) {
 

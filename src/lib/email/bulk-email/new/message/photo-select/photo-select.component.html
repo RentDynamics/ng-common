@@ -1,0 +1,31 @@
+<!-- launch image-url select popover btn -->
+<div rd-photo-launch-btn>
+  <div class="emailCompose__placeholder" *ngIf="!value && !active" (click)="open()">+ Add Photo</div>
+
+  <div class="emailCompose__photo--selected" *ngIf="value && !active">
+    <img [src]="imageFullUrl(value)">
+    <div class="emailCompose__editButton" (click)="open()"><i class="stream stream-pencil-1"></i></div>
+  </div>
+
+  <div class="emailCompose__photo--picker" *ngIf="active">
+    <h4>Select a photo</h4>
+
+    <select #communitySelect class="form-control" *ngIf="communities.length > 1" [(ngModel)]="selectedCommunityId"
+      (change)="updateSelectedCommunityId(communitySelect.value)">
+        <option *ngFor="let community of communities; let i = index;" [value]="community.id">{{community.communityName}}</option>
+    </select>
+
+    <div *ngIf="!manageDisabled" (click)="modalActive = true" class="btn btn-link">Manage photos</div>
+
+    <div class="list" *ngIf="selectedCommunityId">
+      <div rd-photo-container class="noPhoto" (click)="updateSelectedPhotoUrl()">None</div>
+      <div rd-photo-container *ngFor="let img of images" class="photo">
+        <img [src]="imgixSvc.getImageUrl(img.fileUrl, 150, 150)" (click)="updateSelectedPhotoUrl(img.fileUrl)"/>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<rd-manage-photos-modal *ngIf="modalActive && unitPhotosFileRelationType" #unitPhotosModal [fileCategoryId]="fileCategoryId"
+    [fileRelationType]="unitPhotosFileRelationType" (hidden)="closeModal()"></rd-manage-photos-modal>

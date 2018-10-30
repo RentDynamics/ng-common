@@ -1,0 +1,35 @@
+<div rdPickList #pickList="rdPickList" [selected]="selectedRecipients" (onSelectedChange)="onSelectedPickListChange($event)">
+  <div *ngIf="selectedRecipients?.length" class="emailList__header">{{selectedRecipients?.length}} resident{{selectedRecipients?.length !== 1 ? 's' : ''}} selected</div>
+  <div *ngIf="!selectedRecipients?.length" class="emailList__header">0 residents selected</div>
+
+  <div style="font-size: 15px;background: #f1f1f1;padding: 10px 14px;border-radius: 10px;display: inline-block;">
+    <label>
+      <input type="checkbox" (change)="pickList.checkAll($event)" [checked]="recipients.length == selectedRecipients.length" style="margin-right: 5px;"> Select all residents
+    </label>
+  </div>
+
+  <div rdSimpleSort [activeSortField]="orderByField" (change)="orderBy($event)" class="emailList__personHeader">
+    <div class="col-sm-1"></div>
+    <div [rd-simple-sort-field]="'unitNumber'" class="col-sm-2">Unit</div>
+    <div [rd-simple-sort-field]="'name'" class="col-sm-3">Name</div>
+    <div [rd-simple-sort-field]="'communityName'" class="col-sm-2">Community</div>
+    <div class="col-sm-4">Email</div>
+  </div>
+
+  <div *ngFor="let recipient of recipients; trackBy: trackByPersonId" 
+       rdPickListItem #pickListItem="rdPickListItem" itemKey="personId" 
+       [itemValue]="recipient" class="emailList__person"
+       (click)="pickListItem.check(checkbox)">
+    <div class="col-sm-1" style="text-align:left;">
+      <input #checkbox type="checkbox" [checked]="pickListItem?.checked" style="pointer-events: none">
+    </div>
+    <div class="col-sm-2">{{recipient.unitNumber}}</div>
+    <div class="col-sm-3">{{recipient?.name}}</div>
+    <div class="col-sm-2">{{recipient.communityName}}</div>
+    <div class="col-sm-4">{{recipient.emailAddress}}</div>
+  </div>
+
+  <!-- loading indicator -->
+  <rd-loading-indicator *ngIf="isLoading" [height]="75" [width]="75"></rd-loading-indicator>
+
+</div>

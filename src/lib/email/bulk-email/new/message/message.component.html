@@ -1,0 +1,40 @@
+<form #messageForm="ngForm" class="emailBulkCompose">
+
+    <div #sessionCommunityGrpCommunity="rdSessionCommunityGroupCommunity" rdSessionCommunityGroupCommunity [communityGroupId]="communityGroupId"
+        (result)="communityGroupCommunities = $event">
+    </div>
+
+    <div class="emailCompose__logo">
+        <div style="text-align:center;">
+            <rd-file-relation-type-select *ngIf="sessionCommunityGrpCommunity?.hasMoreThanOneCommunity(communityGroupId)" [communities]="communityGroupCommunities"
+                [communityGroup]="communityGroup" [fileRelationType]="message.fileRelationType" (change)="message.fileRelationType = $event"></rd-file-relation-type-select>
+        </div>
+        <rd-logo-select rdMessageChangeField [key]="'logoUrl'" [fileRelationType]="message.fileRelationType"></rd-logo-select>
+    </div>
+
+    <input type="text" rdMessageChangeField [key]="'subject'" [value]="message.subject" name="subject" class="emailCompose__subject"
+        placeholder="Type your email subject here..." />
+
+    <rd-photo-select rdMessageChangeField [key]="'photoUrl'" [value]="message.photoUrl" [communities]="communityGroupCommunities"
+        [fileCategoryId]="FILE_CATEGORY.UNIT" (change)="setPhotoUrl($event)">
+    </rd-photo-select>
+
+    <rd-email-template-ckeditor style="border: solid 1px #ddd;display:block;" rdMessageChangeField [key]="'body'" [(ngModel)]="message.body"
+        ngDefaultControl name="body"></rd-email-template-ckeditor>
+
+    <div class="emailCompose__callToAction">
+        <rd-call-to-action-select rdMessageChangeField [key]="'callToAction'" [value]="message?.callToAction" [communityGroupId]="communityGroupId" 
+            [communityId]="message.callToActionCommunityId" (communityIdChange)="message.callToActionCommunityId = $event">
+        </rd-call-to-action-select>
+    </div>
+
+    <div class="emailCompose__footer">
+        <rd-footer-select rdMessageChangeField [key]="'footer'" [communityGroupCommunities]="communityGroupCommunities" [communityGroupId]="communityGroupId"
+            [footer]="message?.footer"></rd-footer-select>
+    </div>
+
+</form>
+
+<!--<pre>
+    {{message | json}}
+</pre>-->

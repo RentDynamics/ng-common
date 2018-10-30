@@ -1,0 +1,1 @@
+export { EmailMessage } from './email-message';

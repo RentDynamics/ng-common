@@ -1,0 +1,73 @@
+<div class="email__header">New Bulk Email for <strong>{{communityGroup?.name}}</strong>
+  <div class="btn btn-default pull-right" >
+  <!-- (click)="$state.go('rd.communicationCenter.unprocessedEmail.bulk')"> -->
+    Cancel
+  </div>
+</div>
+
+<div class="stepWizard">
+  <ng-container *ngFor="let pane of wizard?.panes; let isLast=last; let i=index;">
+    <div class="stepWizard__step" [ngClass]="{ current: i == wizard.activeIndex, complete: i < wizard.activeIndex }">
+      <div class="stepWizard__icon"><i [ngClass]="pane.icon"></i></div>
+      <div class="stepWizard__title">{{pane.displayName}}</div>
+      <div class="stepWizard__indicator"></div>
+    </div>
+    <div *ngIf="!isLast" class="stepWizard__line"></div>
+  </ng-container>
+</div>
+
+<div class="stepPane">
+  <div class="stepPane__controls">
+    <div class="stepPane__controlsLeft">
+      <button *ngIf="!wizard.isFirst()" class="btn btn-default" [disabled]="isSending" (click)="wizard.back()">Back</button>
+    </div>
+    <div class="stepPane__controlsRight">
+      <div *ngIf="wizard.activePaneSubmitted" class="stepPane__validation">{{wizard?.activePaneErrorMsg}}</div>
+      <button *ngIf="!wizard.isLast()" class="btn btn-success" (click)="wizard.next()">Next</button>
+      <button *ngIf="wizard.isLast()" class="btn btn-warning" [disabled]="isReviewBtnDisabled()" (click)="sendMessage()">Send
+        email to {{recipientCount}} people</button>
+        <!-- {{wizard?.activePane?.isDebouncing}} -->
+    </div>
+  </div>
+
+  <div class="stepPane__body">
+
+    <rd-bulk-email-container rdWizard>
+      <div rdWizardPane #recipientsPane="rdWizardPane" icon="stream stream-person" [displayName]="recipientCount ? recipientCount + ' Recipients' : 'Recipients'"
+        [requireValid]="true" [valid]="recipientPaneValid" [errorMsg]="'Please select recipients'">
+        <rd-bulk-email-recipients *ngIf="!isSending && wizard.isActive(recipientsPane)" [communityGroupId]="communityGroup?.id"
+          [filters]="filters" [recipientType]="recipientType" [recipients]="recipients" [listRecipients]="listRecipients"
+          (onRecipientsChange)="onRecipientsChange($event)" (onFiltersChange)="onFiltersChange($event)"
+          (onRecipientTypeChange)="onRecipientTypeChange($event)" (onListSelectionChange)="onListSelectionChange($event)"></rd-bulk-email-recipients>
+      </div>
+
+      <div rdWizardPane #messagePane="rdWizardPane" icon="stream stream-email-text" displayName="Message"
+        [requireValid]="true" [valid]="message?.isValid()" [errorMsg]="message?.getValidationMsg()">
+        <rd-bulk-email-message *ngIf="!isSending && wizard.isActive(messagePane)" [communityGroupId]="communityGroup?.id"
+          [message]="message" (onMessageChange)="onMessageChange($event)"></rd-bulk-email-message>
+      </div>
+
+      <div rdWizardPane #reviewPane="rdWizardPane" icon="stream stream-email-send" displayName="Review & Send">
+        <rd-bulk-email-review *ngIf="!isSending && wizard.isActive(reviewPane)" [recipientCount]="recipientCount"
+          [sampleRecipient]="recipients[0]" [message]="message" (onInit)="onReviewPaneInit($event)" (onCompile)="onCompileEmail($event)"></rd-bulk-email-review>
+      </div>
+
+      <rd-loading-indicator *ngIf="isSending" [height]="75" [width]="75"></rd-loading-indicator>
+    </rd-bulk-email-container>
+
+  </div>
+
+  <div class="stepPane__controls">
+    <div class="stepPane__controlsLeft">
+      <div *ngIf="!wizard.isFirst()" class="btn btn-default" (click)="wizard.back()">Back</div>
+    </div>
+    <div class="stepPane__controlsRight">
+      <div *ngIf="wizard.activePaneSubmitted" class="stepPane__validation">{{wizard?.activePaneErrorMsg}}</div>
+      <div *ngIf="!wizard.isLast()" class="btn btn-success" (click)="wizard.next()">Next</div>
+      <button *ngIf="wizard.isLast()" class="btn btn-warning" [disabled]="isReviewBtnDisabled()" (click)="sendMessage()">Send
+        email to {{recipientCount}} people</button>
+    </div>
+  </div>
+</div>
+
+<br>

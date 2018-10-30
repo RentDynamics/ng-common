@@ -47,7 +47,7 @@ describe('Component: ExpandingListView', () => {
     component = fixture.componentInstance;
     debugElem = fixture.debugElement.query(By.css('.collapse-card')); // find
     fixture.detectChanges();
-  })
+  });
 
   it('should create an instance', () => {
     expect(component).toBeTruthy();

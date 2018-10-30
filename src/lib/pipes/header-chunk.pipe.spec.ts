@@ -8,7 +8,7 @@ describe('HeaderChunkPipe', () => {
   beforeEach(() => {
     pipe = new HeaderChunkPipe();
     orderByPipe = new OrderByPipe();
-  })
+  });
 
   it('should create an instance', () => {
     expect(pipe).toBeTruthy();
@@ -87,7 +87,7 @@ describe('HeaderChunkPipe', () => {
 
     afterAll(() => {
       mockAry = [];
-    })
+    });
 
     it('should transform array of 506 items correctly with no duplicates when passed orderByFields as the last argument', () => {
       const results = pipe.transform(mockAry, (p1, p2) => { return p1.clientId === p2.clientId; }, (p) => { return p.clientName; }, ['+clientId']);

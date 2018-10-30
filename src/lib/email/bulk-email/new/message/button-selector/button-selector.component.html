@@ -1,0 +1,15 @@
+<div *ngIf="!open && !value" (click)="toggleOpen()" class="emailCompose__placeholder">+ Add Button</div>
+
+<div *ngIf="value" class="emailCompose__button--selected">
+  <div class="btn btn-primary btn-lg btn-block">{{value.title}}</div>
+  <div class="emailCompose__editButton" (click)="toggleOpen()"><i class="stream stream-pencil-1"></i></div>
+</div>
+
+<div *ngIf="open" class="emailCompose__button--picker">
+  <h4>Select a call-to-action button</h4>
+  <rd-community-selector *ngIf="enableCommunitySelect" [communityParentType]="'communityGroup'" [communityParentId]="communityGroup.id" (update)="targetCommunityChange($event)"></rd-community-selector>
+  <div rdSelect #select="rdSelect" [(ngModel)]="value" [multiple]="multiple" (change)="onChange($event)">
+    <rd-button-option rdOption #option="rdOption" [select]="select" [title]="'None'" [description]="'No button'" [value]="null" [style]="'btn-default'"></rd-button-option>
+    <rd-button-option [disabled]="action.value == null" *ngFor="let action of optionList; let i = index" rdOption #option="rdOption" [select]="select" [title]="action.title" [value]="i" [description]="action.description"></rd-button-option>
+  </div>
+</div>

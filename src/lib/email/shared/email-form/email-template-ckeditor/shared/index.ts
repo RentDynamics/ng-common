@@ -1,0 +1,1 @@
+export * from './fill-point.model';

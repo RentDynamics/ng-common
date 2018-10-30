@@ -1,0 +1,26 @@
+<div class="emailCompose__footerPreview">
+  <div *ngIf="communityGroupCommunities?.length > 1" style="text-align: center; font-weight: bold; margin-bottom: 20px;padding-bottom: 10px;border-bottom: solid 1px #ddd;">
+    Use &nbsp;
+    <rd-community-selector *ngIf="communityGroupCommunities.length > 1" [communityParentType]="'communityGroup'" [communityParentId]="communityGroupId"
+      (update)="footerCommunityChange($event)" [value]="footer.communityId"></rd-community-selector>
+    &nbsp; for the footer information.
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+
+      <p style="font-size:16px;margin-top:10px;"><strong>{{footer?.name}}</strong></p>
+      <p style="font-size:20px">{{footer?.phone | telephone}}</p>
+      <p style="font-size:14px">{{footer?.address?.addressLine1}}<br>{{footer?.address?.city}}, {{footer?.address?.state?.abbreviation}} {{footer?.address?.zip}}</p>
+
+    </div>
+    <div class="col-md-6">
+
+      <div style="font-style: italic;" *ngFor="let dowh of footer?.communityGroupDayOfWeekHours; let isLast = last;">
+        <span *ngIf="!dowh.isClosed" >{{dowh.dayOfWeek | substring: 0 : 1 }}: &nbsp; {{dowh.startTime | momentFormat: 'h:mm A'}} - {{dowh.endTime | momentFormat: 'h:mm A'}}</span>
+        <span *ngIf="dowh.isClosed">{{dowh.dayOfWeek | substring: 0 : 1 }}: CLOSED</span>
+      </div>
+    
+    </div>
+  </div>
+</div>

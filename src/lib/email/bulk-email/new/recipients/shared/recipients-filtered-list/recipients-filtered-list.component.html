@@ -1,0 +1,14 @@
+<div class="emailFilters__results">
+
+  <div>
+    <div *ngIf="recipientCount" class="emailFilters__header">{{recipientCount}} people match this message's filters</div>
+    <div *ngIf="!recipientCount" class="emailFilters__header">0 people match this message's filters</div>
+
+    <ng-content></ng-content>
+
+    <div class="btn btn-link" *ngIf="!isLoading && (recipients.length !== recipientCount)" (click)="showMoreResults()">Show more...</div>
+    
+    <!-- loading indicator -->
+    <rd-loading-indicator *ngIf="isLoading" [height]="75" [width]="75"></rd-loading-indicator>
+  </div>
+</div>

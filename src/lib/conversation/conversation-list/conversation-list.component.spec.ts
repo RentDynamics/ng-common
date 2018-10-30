@@ -49,7 +49,7 @@ describe('ConversationListComponent', () => {
 
   it('should set filter on filterChange', () => {
     /* Arrange */
-    const mockFilter = {openOrClosedFc: true }
+    const mockFilter = {openOrClosedFc: true };
     /* Act */
     component.filterChange(mockFilter);
     /* Assert */
@@ -58,7 +58,7 @@ describe('ConversationListComponent', () => {
 
   it('getConversations', () => {
     /* Arrange */
-    const mockFilter = {openOrClosedFc: true }
+    const mockFilter = {openOrClosedFc: true };
     /* Act */
     component.filterChange(mockFilter);
     /* Assert */

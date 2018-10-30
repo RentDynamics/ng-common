@@ -1,0 +1,47 @@
+<div class="emailFilters">
+
+  <div rdFilterGroup class="emailFilters__list">
+    <div class="emailFilters__header">Filters</div>
+
+    <div class="emailFilters__filter">
+      <rd-static-filter rdFilterCompiler [label]="'!person__person_community_communication_preferences__email'" rdFilter class="emailFilters__title"
+        [value]="'False'">Not unsubscribed</rd-static-filter>
+      <rd-static-filter rdFilterCompiler [label]="'person__person_email_addresses__email_address__address__isnull'" rdFilter class="emailFilters__title"
+        [value]="'False'">Email address is valid</rd-static-filter>
+      <rd-static-filter rdFilterCompiler [label]="'resident_status__status'" rdFilter class="emailFilters__title" [value]="'Current'">Current resident</rd-static-filter>
+    </div>
+
+    <hr>
+
+    <div rdFilterCompiler [label]="'community'" class="emailFilters__filter">
+      <div class="emailFilters__title">Communities</div>
+      <rd-community-selector rdFilter [communityParentType]="'communityGroup'" [communityParentId]="communityGroupId" [multiple]="true" [value]="filters?.community"></rd-community-selector>
+    </div>
+
+
+    <div rdFilterCompiler [label]="'moveInDate'" class="emailFilters__filter">
+      <div class="emailFilters__title">Move-in Date</div>
+      <rd-date-range-filter rdFilter [rangeStart]="filters?.moveInDate?.gte" [rangeEnd]="filters?.moveInDate?.lt"></rd-date-range-filter>
+    </div>
+
+    <div rdFilterCompiler [label]="'leaseEndDate'" class="emailFilters__filter" style="margin-bottom: 280px;">
+      <div class="emailFilters__title">Lease End Date</div>
+      <rd-date-range-filter rdFilter [rangeStart]="filters?.leaseEndDate?.gte" [rangeEnd]="filters?.leaseEndDate?.lt"></rd-date-range-filter>
+    </div>
+  </div>
+
+  <rd-recipients-filtered-list [isLoading]="isLoading" [recipientCount]="recipientCount" [recipients]="recipients" (showMore)="nextPage($event)">
+    <div class="emailFilters__personHeader">
+      <div class="col-sm-5">Name</div>
+      <div class="col-sm-3">Unit</div>
+      <div class="col-sm-4">Community</div>
+    </div>
+
+    <div *ngFor="let recipient of recipients; trackBy: trackByPersonId" class="emailFilters__person">
+      <div class="col-sm-5">{{recipient.name}}</div>
+      <div class="col-sm-3">{{recipient.unitNumber}}</div>
+      <div class="col-sm-4">{{recipient.communityName}}</div>
+    </div>
+  </rd-recipients-filtered-list>
+
+</div>

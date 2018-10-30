@@ -58,7 +58,7 @@ describe('TextUnmaskDirective', () => {
   describe('valueChange()', () => {
     beforeEach(() => {
 
-    })
+    });
     it('should find #inputElem', () => {
       expect(component.inputElem).toBeTruthy();
     });

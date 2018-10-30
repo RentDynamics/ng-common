@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {flatMap, map, toArray, switchMap, tap, catchError} from 'rxjs/operators';
-// import {ConversationListComponent, ConversationListItemModel, InfiniteScrollService} from '@rd/common';
 import { InfiniteScrollService } from '../../../infinite-scroll/infinite-scroll.service';
 import { ConversationListComponent } from '../../../conversation/conversation-list/conversation-list.component';
 import { ConversationListItemModel } from '../../../conversation/conversation-list/conversation-list-item/conversation-list-item.model';
@@ -102,7 +101,7 @@ export class SmsConversationListComponent extends ConversationListComponent impl
   // }
 
   nextPage(){
-    
+
   }
 
 }

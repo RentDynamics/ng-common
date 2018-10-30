@@ -1,0 +1,9 @@
+<rd-bootstrap-modal #fileUploaderModal [options]="modalOptions" (hidden)="onHidden($event)">
+  
+    <div rd-bootstrap-modal-header>
+      <button type="button" (click)="fileUploaderModal.hide()" class="close"><span aria-hidden="true"><i class="stream stream-close"></i></span></button>
+      <div class="modal-title">Preview Email</div>
+    </div>
+  
+    <div rd-bootstrap-modal-body [innerHTML]="html"></div>
+</rd-bootstrap-modal>

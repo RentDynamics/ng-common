@@ -36,5 +36,5 @@ describe('Component: BootstrapModal', () => {
 
   it('show() method should be defined', () => {
     expect(component.show).toBeTruthy();
-  })
+  });
 });

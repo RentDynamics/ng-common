@@ -1,0 +1,12 @@
+<rd-bootstrap-select [btnClass]="'btn-default'" [defaultTitle]="defaultTitle" [select]="select" [disabled]="disabled" #select="rdSelect"
+  rdSelect [(ngModel)]="templateId" (change)="onTemplateChange($event)"
+  rdBlur (blur)="select.toggle(false)">
+  <rd-bootstrap-dropdown-menu rdSelectDropdown [select]="select">
+    <li *ngFor="let template of templates" rdOption #option="rdOption" [select]="select" [title]="template.name" [value]="template.id"
+      [class.active]="option.isActive()">
+      <a>
+        <span>{{template.name}}</span>
+      </a>
+    </li>
+  </rd-bootstrap-dropdown-menu>
+</rd-bootstrap-select>

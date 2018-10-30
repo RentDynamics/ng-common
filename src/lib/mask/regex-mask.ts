@@ -5,4 +5,4 @@ export const REGEX_MASK = {
     PHONE_UNMASK: /\D+/g,
     NUMERIC_MASK: createNumberMask(),
     NUMERIC_UNMASK: /\D/g
-}
+};

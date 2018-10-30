@@ -1,0 +1,19 @@
+
+<rd-bootstrap-modal #fileUploaderModal [options]="modalOptions" (hidden)="onHidden($event)">
+
+	<div rd-bootstrap-modal-header>
+		<button type="button" (click)="fileUploaderModal.hide()" class="close"><span aria-hidden="true"><i class="stream stream-close"></i></span></button>
+		<div class="modal-title">Upload Attachment</div>
+  </div>
+
+  <div rd-bootstrap-modal-body>
+    <rd-upload [uploader]="uploader" (complete)="uploadComplete($event)">
+      <h3 style="margin: 0 0 20px 0;">Upload File</h3>
+      <rd-upload-file-select-button></rd-upload-file-select-button>
+
+      <rd-upload-file-submit-button></rd-upload-file-submit-button>
+      <button class="btn btn-danger" (click)="cancelUpload()">Cancel</button>
+    </rd-upload>
+  </div>
+
+</rd-bootstrap-modal>

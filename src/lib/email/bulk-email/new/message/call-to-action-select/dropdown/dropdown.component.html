@@ -1,0 +1,13 @@
+<div class="emailCompose__button--picker">
+  <h4>Select a call-to-action button</h4>
+
+  <rd-community-selector *ngIf="communityGroup?.communities.length > 1" [value]="communityId" [communityParentType]="'communityGroup'" [communityParentId]="communityGroup.id" (update)="onCommunityIdChange($event)"></rd-community-selector>
+
+  <div rdSelect #select="rdSelect" [ngModel]="callToAction">
+    <rd-button-option rdOption #optionStatic="rdOption" [select]="select" [title]="'None'" [description]="'No button'" [value]="null"
+      [style]="'btn-default'" (click)="onCallToActionChange(null)"></rd-button-option>
+    <rd-button-option [disabled]="!option.value" *ngFor="let option of optionList; let i = index" rdOption #optionDynamic="rdOption"
+      [select]="select" [title]="option?.title" [value]="option" [description]="option.description"
+      (click)="onCallToActionChange(option)"></rd-button-option> 
+  </div>
+</div>

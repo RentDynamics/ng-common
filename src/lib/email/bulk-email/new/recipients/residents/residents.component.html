@@ -1,0 +1,12 @@
+<div style="margin-top: 15px;">
+  <rd-button-group [(ngModel)]="selectionType">
+    <rd-button-group-button class="btn btn-default" [value]="SELECTION_TYPE.LIST">Select from list</rd-button-group-button>
+    <rd-button-group-button class="btn btn-default" [value]="SELECTION_TYPE.FILTER">Filters</rd-button-group-button>
+  </rd-button-group>
+
+  <rd-bulk-email-residents-list *ngIf="selectionType === SELECTION_TYPE.LIST" [communityGroupId]="communityGroupId" [selectedRecipients]="listRecipients"
+    (onRecipientsChange)="onRecipientsChange.emit($event)" (onListSelectionChange)="onListSelectionChange.emit($event)"></rd-bulk-email-residents-list>
+
+  <rd-bulk-email-residents-filter *ngIf="selectionType === SELECTION_TYPE.FILTER" [communityGroupId]="communityGroupId" [filters]="filters"
+    (onRecipientsChange)="onRecipientsChange.emit($event)" (onFiltersChange)="onFiltersChange.emit($event)"></rd-bulk-email-residents-filter>
+</div>

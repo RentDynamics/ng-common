@@ -17,4 +17,4 @@ if (window['toastr'])
         "hideEasing": "linear",
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
-    }
+    };

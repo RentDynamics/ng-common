@@ -1,0 +1,24 @@
+
+<!--<div>
+  <span>records to show</span>
+  <select (change)="refreshRecords($event)">
+    <option value='10'>10</option>
+    <option value='20'>20</option>
+    <option value='50'>50</option>
+    <option value='100'>100</option>
+  </select>
+</div>-->
+
+<div *ngIf="(!bulkEmailMessages || bulkEmailMessages.length === 0) && !loading">No sent emails</div>
+
+<div *ngIf="bulkEmailMessages && bulkEmailMessages.length > 0">
+  <rd-bulk-email-list-item *ngFor="let message of bulkEmailMessages" [message]="message" (click)="openMessageModal(message)"></rd-bulk-email-list-item>
+
+  <div class="btn btn-default" style="margin-top: 15px;" *ngIf="!loading && (bulkEmailMessages.length !== messageCount)" (click)="nextPage()">Show more</div>
+
+  <rd-bulk-email-modal *ngIf="messageModalActive && activeMessage" [message]="activeMessage" (hidden)="messageModalActive = false"></rd-bulk-email-modal>
+</div>
+
+<rd-loading-indicator *ngIf="loading" [height]="75" [width]="75" [src]="'/assets/images/loading-bubbles-dark.svg'">
+
+</rd-loading-indicator>

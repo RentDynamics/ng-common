@@ -1,0 +1,9 @@
+<div class="preview" *ngIf="image">
+    <img [src]="imgixSvc.getImageUrl(image?.fileUrl, 196)">
+    <div class="emailCompose__editButton" (click)="logoPhotoModalActive = true"><i class="stream stream-pencil-1"></i></div>
+</div>
+
+<div *ngIf="!image" class="emailCompose__placeholder" (click)="logoPhotoModalActive = true">+ Add Logo</div>
+
+<rd-manage-photo-modal #logoPhotoModal *ngIf="logoPhotoModalActive" [fileCategoryId]="fileCategoryId"
+    [fileRelationType]="fileRelationType" (delete)="onDeletePhoto($event)" (hidden)="onModalHidden($event)"></rd-manage-photo-modal>

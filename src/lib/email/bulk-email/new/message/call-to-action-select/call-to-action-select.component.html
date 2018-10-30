@@ -1,0 +1,11 @@
+<div *ngIf="!open && !value" (click)="open = true" class="emailCompose__placeholder">+ Add Button</div>
+
+<div *ngIf="value" class="emailCompose__button--selected">
+  <div class="btn btn-primary btn-lg btn-block">{{value.title}}</div>
+  <div class="emailCompose__editButton" (click)="open = !open"><i class="stream stream-pencil-1"></i></div>
+</div>
+
+<rd-call-to-action-select-dropdown *ngIf="open && communityGroup" [callToAction]="value" [communityGroup]="communityGroup" 
+  [communityId]="communityId" (callToActionChange)="onCallToActionChange($event)" (communityIdChange)="onCommunityIdChange($event)"
+  (hide)="open = false">
+</rd-call-to-action-select-dropdown> 

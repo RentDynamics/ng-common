@@ -10,18 +10,19 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class PhotosService {
+  // environment: any = { production: false };
 
   totalCount: number;
 
   get uploadFileUrl() {
-    if (!this.environment){
-      throw Error('environment is not defined!!!');
-    }
-    if (this.environment.production) {
-      return '//api.rentdynamics.com/files';
-    } else {
+    // if (!this.environment){
+    //   throw Error('environment is not defined!!!');
+    // }
+    // if (this.environment.production) {
+    //   return '//api.rentdynamics.com/files';
+    // } else {
       return '//api-dev.rentdynamics.com/files';
-    }
+    // }
   }
 
   constructor(private coreApiSvc: CoreApiService,

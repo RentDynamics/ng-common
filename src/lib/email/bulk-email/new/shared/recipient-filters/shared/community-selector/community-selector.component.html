@@ -1,0 +1,15 @@
+<!--<div *ngIf="communityParentType == 'communityGroup' && communityParentId == null" #sessionCommunityGrpCommunity="rdSessionCommunityGroupCommunity" rdSessionCommunityGroupCommunity (result)="communitySelectorItems = $event"></div>
+<div *ngIf="communityParentType == 'client' && communityParentId == null" #sessionCommunityGrpCommunity="rdSessionCommunityGroupCommunity" rdSessionCommunityGroupCommunity (result)="communitySelectorItems = $event"></div>-->
+
+<rd-bootstrap-select [defaultTitle]="getDefaultTitle()" #communityMultiselect="rdSelect" [select]="communityMultiselect"
+ rdSelect [disabled]="disabled" [multiple]="multiple" [(ngModel)]="value" (change)="onChange($event)" rdBlur (blur)="communityMultiselect.toggle(false)">
+	<rd-bootstrap-dropdown-menu rdSelectDropdown [select]="communityMultiselect">
+		<li *ngIf="!communitySelectorItems?.length">
+			<a><span class="badge badge-warning">No communities</span></a>
+		</li>
+		<li *ngFor="let community of communitySelectorItems; let i = index" rdOption #option="rdOption" [select]="communityMultiselect"
+		 [title]="community.name" [value]="community.id" [class.active]="option.isActive()">
+			<a><span>{{community.name}}</span></a>
+		</li>
+	</rd-bootstrap-dropdown-menu>
+</rd-bootstrap-select>

@@ -1,0 +1,17 @@
+<div class="emailList">
+
+  <!--<div rdFilterGroup class="emailFilters__list">
+    <div class="emailFilters__header">Filters</div>
+
+    <div rdFilterCompiler [label]="'community'" class="emailFilters__filter">
+      <div class="emailFilters__title">Communities</div>
+      <rd-community-selector rdFilter [communityParentType]="'communityGroup'" [communityParentId]="communityGroupId" [multiple]="true"></rd-community-selector>
+    </div>
+
+  </div>-->
+
+  <rd-recipients-pick-list [isLoading]="isLoading" [recipients]="recipients" [selectedRecipients]="selectedRecipients" (orderByChange)="getRecipients($event)"
+                           (onSelectedRecipientsChange)="onSelectedRecipientsChange($event)">
+  </rd-recipients-pick-list>
+
+</div>

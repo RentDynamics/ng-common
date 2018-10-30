@@ -24,13 +24,13 @@ export class TextUnmaskDirective {
   }
 
   @HostListener('input') inputChange() {
-    const newValue = this.model.value.replace(this.unmaskRegex, '')
+    const newValue = this.model.value.replace(this.unmaskRegex, '');
     // Note that you need to pass the 2nd argument with the following values:
     this.model.control.setValue(newValue, {
       emitEvent: true,
-      
+
       emitModelToViewChange: true,
-      
+
       emitViewToModelChange: true
     });
   }

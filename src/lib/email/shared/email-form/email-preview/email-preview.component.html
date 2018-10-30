@@ -1,0 +1,5 @@
+<button *ngIf="previewButtonVisible" class="btn btn-default" [disabled]="disabled" (click)="showEmailPreview = true">Preview</button>
+
+<rd-email-preview-modal *ngIf="showEmailPreview && modal" [displayHtml]="displayHtml" (hidden)="onHidden()"></rd-email-preview-modal>
+
+<rd-email-preview-inline *ngIf="showEmailPreview && inline" [displayHtml]="displayHtml" (hidden)="onHidden()"></rd-email-preview-inline>

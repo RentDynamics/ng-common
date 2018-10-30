@@ -1,0 +1,12 @@
+<div>
+  <p class="label-sm">Attachment(s)</p>
+  <div title="Add" style="margin-bottom: 16px;">
+    <i class="stream stream-paperclip-1" style="font-size: 25px;" (click)="openModal = true"></i>
+  </div>
+  <div *ngFor="let attachment of attachments" class="thumbnail" style="display: inline-block;">
+    <img [src]="imgixSvc.getImageUrl(attachment?.fileUrl, 100)" />
+    <i class="stream stream-remove-22 delete-icon" (click)="removeAttachment(attachment)"></i>
+  </div>
+</div>
+
+<rd-email-template-file-uploader-modal *ngIf="openModal" (upload)="addAttachment($event)" (hidden)="openModal=false"></rd-email-template-file-uploader-modal>

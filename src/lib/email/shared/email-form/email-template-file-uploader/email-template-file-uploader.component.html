@@ -1,0 +1,17 @@
+
+<h4>Image</h4>
+
+<p><span class="btn btn-primary" (click)="openModal = true">Select Image</span></p>
+<rd-email-template-file-uploader-modal *ngIf="openModal"></rd-email-template-file-uploader-modal>
+
+<!-- Selected Image -->
+<p>
+  <img id="image3" />
+  <input type="hidden" name="image3" required />
+</p>
+
+<!-- Validation -->
+<div >
+  <div >Image is required</div>
+</div>
+

@@ -1,0 +1,1 @@
+export { PersonBulkEmailMessage } from './person-bulk-email-message';

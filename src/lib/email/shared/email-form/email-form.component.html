@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-6 col-lg-4">
+    <p class="label-sm">Email Address(es)</p>
+    <input id="emailAddresses" name="emailAddresses" type="text" class="form-control" (change)="formChanged()" [(ngModel)]="recipients"
+      required />
+  </div>
+  <div class="col-sm-6 col-lg-4" style="margin-top: 27px;">
+    <rd-email-template-select (change)="fetchTemplateData($event)" [communityId]="communityId" [templateId]="templateId"></rd-email-template-select>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8 col-lg-6">
+    <p class="label-sm">Subject</p>
+    <input type="text" name="subject" id="subject" class="form-control" [(ngModel)]="subject" (change)="formChanged()" required
+    />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8">
+    <p class="label-sm">Message</p>
+    <rd-email-template-ckeditor [(ngModel)]="body" (change)="updateBody($event)" [allowDynamicFields]="false" ngDefaultControl
+      name="body"></rd-email-template-ckeditor>
+  </div>
+</div>
+
+<div class="row" style="margin-top:16px">
+  <div class="col-sm-7">
+    <rd-email-attachment (update)="updateAttachments($event)"></rd-email-attachment>
+  </div>
+  <div class="col-sm-1 text-right">
+    <rd-email-preview [displayHtml]="html" [modal]="true" [disabled]="!html"></rd-email-preview>
+  </div>
+</div>
