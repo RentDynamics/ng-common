@@ -67,7 +67,7 @@
     "@angular/router": "6.1.0",
     "@rd/compiler": "4.0.0",
     "@rd/core": "4.1.0",
-    "@rd/forms": "file:../ng-forms/dist/forms/rd-forms-0.0.0-development.tgz",
+    "@rd/forms": "file:rd-forms-0.0.0-development.tgz",
     "@types/bootstrap": "^3.3.38",
     "@types/ckeditor": "0.0.45",
     "@types/jasmine": "2.8.6",
