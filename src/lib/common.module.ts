@@ -5,15 +5,15 @@ import { FormsModule } from '@angular/forms';
 
 import { RdAngularCoreModule } from '@rd/core';
 
-import { ExpandingListViewModule } from './expanding-list-view/index';
-import { TabsetModule } from './tabset/index';
+import { ExpandingListViewModule } from './expanding-list-view/expanding-list-view.module';
+import { TabsetModule } from './tabset/tabset.module';
 // import { UploadModule } from './upload/index';
 // import { ModalModule } from './modal/index';
-import { LoadingIndicatorModule } from './loading-indicator/index';
-import { SimpleSortModule } from './simple-sort/index';
+import { LoadingIndicatorModule } from './loading-indicator/loading-indicator.module';
+import { SimpleSortModule } from './simple-sort/simple-sort.module';
 // import { ToastModule } from './toast/index';
 import { IFrameModule } from './iframe/iframe.module';
-import { PipesModule } from './pipes';
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
     declarations: [

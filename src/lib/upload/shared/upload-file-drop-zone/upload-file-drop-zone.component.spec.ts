@@ -1,14 +1,8 @@
 /* tslint:disable:no-unused-variable */
-import { ElementRef, Inject } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { ComponentFixture } from '@angular/core/testing';
 import { FileDropDirective, FileSelectDirective } from 'ng2-file-upload';
-
-import {
-  async, inject
-} from '@angular/core/testing';
 
 import { UploadFileDropZoneComponent } from './upload-file-drop-zone.component';
 import { UploadComponent } from '../../upload.component';

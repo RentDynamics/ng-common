@@ -1,4 +1,4 @@
-import { EmailAddress } from '../email-address';
+import { EmailAddress } from '../email-address/email-address';
 
 export interface Person {
     created: string;

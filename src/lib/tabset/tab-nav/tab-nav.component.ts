@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, QueryList, Host, Inject, forwardRef } from '@angular/core';
 
 import { TabsetComponent } from '../tabset.component';
-import { TabComponent } from '../tab';
 
 @Component({
   selector: 'rd-tab-nav',

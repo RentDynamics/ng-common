@@ -1,8 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
-import { RouterTestingModule } from '@angular/router/testing';
 
 import { CoreApiService, TextMsgItApiService } from '@rd/core';
 import { CoreApiServiceMock } from '@rd/core/testing';

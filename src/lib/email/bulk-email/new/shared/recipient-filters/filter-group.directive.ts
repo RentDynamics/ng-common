@@ -6,7 +6,6 @@ import {
   Output,
   QueryList
 } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import { FilterCompilerDirective } from './shared/filter-compiler.directive';
 

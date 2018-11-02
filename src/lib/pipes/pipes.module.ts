@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 import { CommunityDisplayPipe } from './community-display.pipe';
 import { CallCenterAgentDisplayPipe } from './call-center-agent-display.pipe';

@@ -1,7 +1,5 @@
 import * as moment from 'moment';
 
-import {ConversationListItem} from './conversation-list-item';
-
 export class ConversationListItemModel {
   id?: number;
   agentId?: number;

@@ -1,6 +1,5 @@
 import { Directive, OnInit, Optional, Input, HostListener } from '@angular/core';
 import { NgModel, NgControl, AbstractControl } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { REGEX_MASK } from './regex-mask';
 
 @Directive({

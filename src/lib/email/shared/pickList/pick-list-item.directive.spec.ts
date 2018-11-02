@@ -1,6 +1,5 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async } from '@angular/core/testing';
 import { PickListItemDirective } from './pick-list-item.directive';
 
 describe('Directive: PickListItem', () => {

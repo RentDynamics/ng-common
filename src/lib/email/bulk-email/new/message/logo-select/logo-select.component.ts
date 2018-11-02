@@ -3,11 +3,12 @@ import {
   SimpleChanges, ChangeDetectorRef
 } from '@angular/core';
 
-import { FILE_CATEGORY } from '../../../../../file';
+import { FILE_CATEGORY } from '../../../../../file/file-category.enum';
 
-import { ImageUrlUtilityService } from '../../../../../imgix/image-url-utility.service';
 import { ImgixService } from '../../../../../imgix/imgix.service';
-import { PhotoSelect, PhotosService, Image } from '../../../../../photos';
+import { PhotosService } from '../../../../../photos/photos.service';
+import { Image } from '../../../../../photos/shared/image';
+
 @Component({
   selector: 'rd-logo-select',
   templateUrl: './logo-select.component.html',

@@ -1,8 +1,5 @@
 /* tslint:disable:no-unused-variable */
 
-import {
-  async, inject
-} from '@angular/core/testing';
 import { TabsService } from './tabs.service';
 
 let service = null;

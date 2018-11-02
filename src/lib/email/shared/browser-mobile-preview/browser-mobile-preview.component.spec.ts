@@ -1,8 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
-import { RouterTestingModule } from '@angular/router/testing';
 
 import { CoreApiService, TextMsgItApiService } from '@rd/core';
 import { CoreApiServiceMock } from '@rd/core/testing';
@@ -10,7 +8,7 @@ import { DynamicTypeBuilder } from '@rd/compiler';
 
 // import { BrowserMobilePreviewModule } from './browser-mobile-preview.module';
 import { BrowserMobilePreviewComponent } from './browser-mobile-preview.component';
-import { RdamlService } from '../../shared/rdaml';
+import { RdamlService } from '../../shared/rdaml/rdaml.service';
 
 describe('BrowserMobilePreviewComponent', () => {
   let component: BrowserMobilePreviewComponent;

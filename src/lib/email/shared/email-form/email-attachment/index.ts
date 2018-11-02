@@ -1,1 +1,1 @@
-export * from './email-attachment.component';
+export { EmailAttachmentComponent } from './email-attachment.component';

@@ -1,12 +1,10 @@
 import { switchMap } from 'rxjs/operators';
 import { Component, ChangeDetectorRef, OnInit, Input } from '@angular/core';
-import { Observable, Observer, Subject } from 'rxjs';
 
 import { CoreApiService, CoreApiSelector } from '@rd/core';
 
-import { InfiniteScrollService } from '../../../../../infinite-scroll';
-import { BulkEmailMessageModel } from '../../../../shared/bulk-email-message';
-import { EMAIL_MESSAGE_STATUS_TYPE } from '../../../../shared/email-message-status-type';
+import { InfiniteScrollService } from '../../../../../infinite-scroll/infinite-scroll.service';
+import { EMAIL_MESSAGE_STATUS_TYPE } from '../../../../shared/email-message-status-type/email-message-status-type.enum';
 
 @Component({
   selector: 'rd-recipient-status-list',
@@ -32,7 +30,9 @@ export class RecipientStatusListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    if (this.bulkMessageId && this.status) this.get();
+    if (this.bulkMessageId && this.status) {
+      this.get();
+    }
   }
 
   get() {

@@ -4,7 +4,7 @@ import {
   OnChanges, SimpleChange, SimpleChanges
 } from '@angular/core';
 
-import {RdamlService, RdamlQueryParams} from '../../shared/rdaml';
+import {RdamlService} from '../../shared/rdaml/rdaml.service';
 import {PLATFORM} from '../browser-mobile-preview/platform.enum';
 
 @Component({

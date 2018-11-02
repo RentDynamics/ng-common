@@ -1,11 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import { ElementRef, Inject, ChangeDetectorRef } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { ComponentFixture } from '@angular/core/testing';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
 
 import {
   async, inject

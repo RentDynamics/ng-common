@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter, Input, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import { RECIPIENT_TYPE } from './shared/recipient-type.enum';
 import { RecipientResult, Recipient } from './shared/recipient';

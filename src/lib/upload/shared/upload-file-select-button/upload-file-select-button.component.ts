@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FileDropDirective, FileSelectDirective } from 'ng2-file-upload';
 
 import { UploadComponent } from '../../upload.component';
 

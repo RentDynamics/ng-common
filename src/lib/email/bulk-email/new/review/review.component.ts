@@ -59,17 +59,11 @@ export class ReviewComponent implements OnInit {
 
     this.onInit.emit(null);
 
-    this.templateCompiler
-      .compile(
-        'assets/templates/bulk-logo-inline.html',
-        this.message,
-        this.dynamicContentPlaceholder,
-        ['SharedModule']
-      )
-      .subscribe(
-        (compiledResult: CompiledResultModel) => {
+    this.templateCompiler.compile('assets/templates/bulk-logo-inline.html', this.message, this.dynamicContentPlaceholder,
+        ['SharedModule']).subscribe((compiledResult: CompiledResultModel) => {
           console.log([compiledResult, $(compiledResult.outerHTML)]);
-          this.compiledHtml = compiledResult.styles + compiledResult.outerHTML; // $(compiledResult.outerHTML).find('head').append(compiledResult.styles).html();
+          this.compiledHtml = compiledResult.styles + compiledResult.outerHTML;
+          // $(compiledResult.outerHTML).find('head').append(compiledResult.styles).html();
           this.onCompile.emit(compiledResult.styles + compiledResult.outerHTML);
         },
         err => {

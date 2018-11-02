@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 import { Observable } from 'rxjs';
-import { Person } from '../../../../shared/person';
+import { Person } from '../../../../shared/person/person';
 
 
 export interface Recipient {

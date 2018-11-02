@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { CoreApiService } from '@rd/core';
 
-import { FillPoint } from './shared';
+import { FillPoint } from './shared/fill-point.model';
 
 @Component({
   selector: 'rd-email-template-ckeditor',
@@ -71,7 +71,7 @@ export class EmailTemplateCkeditorComponent implements OnInit {
                 // See: http://docs.ckeditor.com/#!/guide/dev_advanced_content_filter
                 var acfRules = 'span{color}';
                 if(self.allowDynamicFields){
-                    // Create the Dropdown box            
+                    // Create the Dropdown box
                     editor.ui.addRichCombo( 'dynamicFields', {
                         label: 'Dynamic Fields',
                         title: 'Dynamic Fields',
@@ -83,42 +83,42 @@ export class EmailTemplateCkeditorComponent implements OnInit {
                             css: [ 'https://cdn.ckeditor.com/4.4.0/standard/skins/moono/editor.css?t=E3OD' ].concat( config.contentsCss ),
                             multiSelect: false
                         },
-                        
+
                         // Let's populate the list of available items.
                         init: function() {
                             for (let i = 0; i < categories.length; i++) {
                                 this.startGroup(categories[i].dropDownLabel);
 
-                                let items = fillPoints.filter(function(x){ 
+                                let items = fillPoints.filter(function(x){
                                         return x.category.fillPointLabel == categories[i].fillPointLabel;
-                                    }).sort(function(a,b){ 
-                                        return a.sortOrder - b.sortOrder; 
+                                    }).sort(function(a,b){
+                                        return a.sortOrder - b.sortOrder;
                                     });
-                                
+
                                 for (let j = 0; j < items.length; j++) {
                                     var item = new FillPoint(items[j]);
                                     this.add(item.fillPointValue, item.dropDownLabel);
                                 }
                             }
                         },
-            
+
                         onClick: function(value) {
                             editor.focus();
                             editor.fire('saveSnapshot');
                             editor.insertHtml(value);
                             editor.fire('saveSnapshot');
                         },
-            
+
                         onRender: function() { },
-                        
+
                         onOpen: function() { },
-            
+
                         refresh: function() {
                             if ( !editor.activeFilter.check( acfRules ) )
                                 this.setState( CKEDITOR.TRISTATE_DISABLED );
                         }
-                    });       
-                }     
+                    });
+                }
             }
         }
     };

@@ -41,6 +41,7 @@ import { PickListModule } from '../../shared/pickList/pick-list.module';
 import { PhotosModule } from '../../../photos/photos.module';
 import { PipesModule } from '../../../pipes/pipes.module';
 import { ImgixModule } from '../../../imgix/imgix.module';
+// import { RdAngularCommonModule } from '../../../common.module';
 
 
 @NgModule({

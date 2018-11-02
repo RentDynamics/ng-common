@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
 
-import { async, inject } from '@angular/core/testing';
-
 import { FillPoint } from './fill-point.model';
 
 describe('FillPoint', () => {

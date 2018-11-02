@@ -1,11 +1,9 @@
-import { Community } from '../community';
-import { CommunityGroup } from './community-group';
-
 export class CommunityGroupModel {
-    communities: Community[] = [];
+  communities: any[] = [];
 
-    constructor(args?: CommunityGroup) {
-        for(let prop in args)
-            this[prop] = args[prop]
+  constructor(args?: any) {
+    for (let prop in args) {
+      this[prop] = args[prop];
     }
+  }
 }

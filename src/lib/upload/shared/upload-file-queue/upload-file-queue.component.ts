@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FileDropDirective } from 'ng2-file-upload';
 
 import { UploadComponent } from '../../upload.component';
-import { UploadFilePreviewComponent } from '../upload-file-preview/upload-file-preview.component';
+
 //import { UploadFileProgressBarComponent } from '../upload-file-progress-bar';
 
 @Component({

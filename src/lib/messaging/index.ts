@@ -1,5 +1,5 @@
-export * from './chat/chat-conversation-list/chat-conversation-list.component';
-export * from './messaging-routing.module';
-export * from './messaging.component';
+export {ChatConversationListComponent} from './chat/chat-conversation-list/chat-conversation-list.component';
+export {MessagingRoutingModule} from './messaging-routing.module';
+export {MessagingComponent} from './messaging.component';
 export {CommonMessagingModule} from './messaging.module';
-export * from './sms/sms-conversation-list/sms-conversation-list.component';
+export {SmsConversationListComponent, Sms} from './sms/sms-conversation-list/sms-conversation-list.component';

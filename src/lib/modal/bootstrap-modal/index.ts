@@ -1,1 +1,1 @@
-export * from './bootstrap-modal.component';
+export { BootstrapModalComponent } from './bootstrap-modal.component';

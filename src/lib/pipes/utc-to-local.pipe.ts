@@ -4,7 +4,6 @@ import {of as observableOf,  Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
 import { ChangeDetectorRef, Pipe, PipeTransform } from '@angular/core';
 
-import { MomentFormat } from '@rd/core/datetime';
 import { CommunityGroupTimezoneService } from '@rd/core/datetime';
 
 // declare var moment;

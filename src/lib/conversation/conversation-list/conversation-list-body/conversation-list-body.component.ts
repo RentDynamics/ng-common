@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import * as moment from 'moment';
 import {ConversationListItemModel} from '../conversation-list-item/conversation-list-item.model';
 
 @Component({

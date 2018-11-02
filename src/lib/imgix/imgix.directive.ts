@@ -1,5 +1,4 @@
 import { Directive, Input, Output, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Directive({
   selector: '[rdImgix]',

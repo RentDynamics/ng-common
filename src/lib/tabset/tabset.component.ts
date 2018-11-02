@@ -1,7 +1,6 @@
 import { AfterContentInit, Component, EventEmitter, OnInit, OnDestroy, Output, Query, QueryList, ContentChildren } from '@angular/core';
 
 import { TabComponent } from './tab';
-import { TabNavComponent } from './tab-nav';
 
 @Component({
     selector: 'rd-tabset',

@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, OnDestroy, Input, Output, Optional } from '@angular/core';
-import { NgClass, NgStyle } from '@angular/common';
 import { FileUploader } from 'ng2-file-upload';
 
 @Component({

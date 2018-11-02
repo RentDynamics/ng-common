@@ -17,8 +17,8 @@ export class StoredProcedureService {
     return this.coreApiSvc.post('/storedProcedures', body).pipe(
       catchError((err: any, caught: Observable<any>) => {
         console.debug('*** error w/stored procedure ***', [body.spName, err]);
-        return observableOf(catchResult); 
-      })); 
+        return observableOf(catchResult);
+      }));
   }
 
 }

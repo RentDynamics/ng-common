@@ -5,7 +5,7 @@ import { RdAngularFormsModule } from '@rd/forms';
 import { RdAngularCompilerModule } from '@rd/compiler';
 
 import { BrowserMobilePreviewComponent } from './browser-mobile-preview.component';
-import { RdamlModule } from '../../shared/rdaml';
+import { RdamlModule } from '../../shared/rdaml/rdaml.module';
 
 @NgModule({
   imports: [

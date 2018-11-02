@@ -1,12 +1,10 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { AfterViewInit, Component, ViewChild, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { CoreApiService, TextMsgItApiService } from '@rd/core';
 import { CoreApiServiceMock } from '@rd/core/testing';
 
-import { SessionModule } from './session.module';
 import { SessionCommunityGroupCommunityDirective } from './session-community-group-community.directive';
 
 describe('SessionCommunityGroupCommunityDirective', () => {

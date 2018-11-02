@@ -1,13 +1,13 @@
 
 import {tap} from 'rxjs/operators';
 import { Component, ContentChild, OnInit, Inject, Input, Output, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import { CoreApiService, CoreApiSelector } from '@rd/core';
 
 import {ImageUrlUtilityService} from '../../../../../imgix/image-url-utility.service';
 import { ImgixService } from '../../../../../imgix/imgix.service';
-import { PhotoSelect, PhotosService } from '../../../../../photos';
+import { PhotosService } from '../../../../../photos/photos.service';
+import { PhotoSelect } from '../../../../../photos/shared/photo-select';
 
 @Component({
   selector: 'rd-photo-select',

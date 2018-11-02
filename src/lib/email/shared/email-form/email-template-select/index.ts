@@ -1,1 +1,1 @@
-export * from './email-template-select.component';
+export { EmailTemplateSelectComponent } from './email-template-select.component';

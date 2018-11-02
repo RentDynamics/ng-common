@@ -15,7 +15,6 @@ import {
 } from '@angular/core';
 
 import { TabsetComponent } from '../tabset.component';
-import { TabNavComponent } from '../tab-nav';
 
 @Component({
   selector: 'rd-tab',

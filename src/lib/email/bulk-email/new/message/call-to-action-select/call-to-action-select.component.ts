@@ -6,10 +6,8 @@ import {
   Output,
   ViewChild
 } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import { CoreApiService } from '@rd/core';
-import { OptionDirective } from '@rd/forms';
 
 import { CallToActionService } from './shared/call-to-action.service';
 

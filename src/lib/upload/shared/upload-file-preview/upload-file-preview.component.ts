@@ -1,5 +1,4 @@
 import { Component, ElementRef, OnInit, OnDestroy, Input, Output, Optional, ChangeDetectionStrategy, ChangeDetectorRef, DoCheck } from '@angular/core';
-import { FileDropDirective } from 'ng2-file-upload';
 
 import { isObject } from '@rd/core';
 import { UploadComponent } from '../../upload.component';

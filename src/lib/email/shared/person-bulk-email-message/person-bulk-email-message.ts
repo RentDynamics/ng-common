@@ -1,8 +1,8 @@
-import { BulkEmailMessage } from '../bulk-email-message';
-import { Person } from '../person';
-import { EMAIL_MESSAGE_STATUS_TYPE } from '../email-message-status-type';
-import { Community } from '../community';
-import { EmailMessage } from '../email-message';
+import { BulkEmailMessage } from '../bulk-email-message/bulk-email-message';
+import { Person } from '../person/person';
+import { EMAIL_MESSAGE_STATUS_TYPE } from '../email-message-status-type/email-message-status-type.enum';
+import { Community } from '../community/community';
+import { EmailMessage } from '../email-message/email-message';
 
 export interface PersonBulkEmailMessage {
     id: number;

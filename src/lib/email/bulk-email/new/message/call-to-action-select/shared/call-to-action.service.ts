@@ -1,7 +1,6 @@
+import { of as observableOf, Observable } from 'rxjs';
 
-import {of as observableOf,  Observable } from 'rxjs';
-
-import {refCount, publishReplay, map} from 'rxjs/operators';
+import { refCount, publishReplay, map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 
 import { CoreApiService } from '@rd/core';
@@ -14,10 +13,7 @@ import { CallToActionSelectActionOption } from './call-to-action-select-action-o
 export class CallToActionService {
   constructor(private cacheSvc: any, private coreApiSvc: CoreApiService) {}
 
-  getCallToActionOptions(
-    communityGroup: any,
-    community?: any
-  ): Observable<CallToActionSelectActionOption[]> {
+  getCallToActionOptions(communityGroup: any, community?: any): Observable<CallToActionSelectActionOption[]> {
     return observableOf([
       {
         title: 'Visit our website',
@@ -39,56 +35,34 @@ export class CallToActionService {
         title: 'Call us',
         type: 'phone',
         value:
-          communityGroup &&
-          communityGroup.emailMsgItAdsourceTracking &&
-          communityGroup.emailMsgItAdsourceTracking.phoneNumber
-            ? `tel:${communityGroup.emailMsgItAdsourceTracking.phoneNumber}`
-            : communityGroup && communityGroup.phone
-              ? `tel:${communityGroup.phone.phoneNumber}`
-              : null,
+          communityGroup && communityGroup.emailMsgItAdsourceTracking && communityGroup.emailMsgItAdsourceTracking.phoneNumber
+          ? `tel:${communityGroup.emailMsgItAdsourceTracking.phoneNumber}` : communityGroup && communityGroup.phone
+          ? `tel:${communityGroup.phone.phoneNumber}` : null,
         description: 'Provide community phone number'
       },
       {
         title: 'Email us',
         type: 'email',
         value:
-          communityGroup &&
-          communityGroup.emailMsgItAdsourceTracking &&
-          communityGroup.emailMsgItAdsourceTracking.email
-            ? `mailto:${communityGroup.emailMsgItAdsourceTracking.email}`
-            : community
-              ? `mailto:${community.outboundEmailAddress}`
-              : null,
+          communityGroup &&communityGroup.emailMsgItAdsourceTracking && communityGroup.emailMsgItAdsourceTracking.email
+            ? `mailto:${communityGroup.emailMsgItAdsourceTracking.email}` : community ? `mailto:${community.outboundEmailAddress}` : null,
         description: 'Prompt recipient to compose a new email'
       }
     ]);
   }
 
   getCommunityGroup(communityGroupId: number) {
-    return this.coreApiSvc
-      .get(
-        `/communityGroups/${communityGroupId}?include=client,communities,email_msg_it_adsource_tracking,phone`
-      )
-      .pipe(map((result: any) => new Object(result)));
+    return this.coreApiSvc.get(`/communityGroups/${communityGroupId}?include=client,communities,email_msg_it_adsource_tracking,phone`)
+                          .pipe(map((result: any) => new Object(result)));
   }
 
   getCommunityGroupCache(communityGroupId: number) {
-    if (this.cacheSvc.cache[`call_to_action_community_group${communityGroupId}`] ) {
+    if (this.cacheSvc.cache[`call_to_action_community_group${communityGroupId}`]) {
       return this.cacheSvc.cache[`call_to_action_community_group${communityGroupId}`];
     }
-    this.cacheSvc.cache[
-      `call_to_action_community_group${communityGroupId}`
-    ] = this.coreApiSvc
-      .get(
-        `/communityGroups/${communityGroupId}?include=client,communities,email_msg_it_adsource_tracking,phone`
-      )
-      .pipe(
-      map((result: any) => new Object(result)),
-        publishReplay(1),
-        refCount()
-      );
-    return this.cacheSvc.cache[
-      `call_to_action_community_group${communityGroupId}`
-    ];
+    this.cacheSvc.cache[`call_to_action_community_group${communityGroupId}`] = this.coreApiSvc
+      .get(`/communityGroups/${communityGroupId}?include=client,communities,email_msg_it_adsource_tracking,phone`)
+      .pipe(map((result: any) => new Object(result)), publishReplay(1), refCount());
+    return this.cacheSvc.cache[`call_to_action_community_group${communityGroupId}`];
   }
 }

@@ -1,12 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ConversationListItemModel} from './conversation-list-item/conversation-list-item.model';
-import * as moment from 'moment';
 import {CoreApiService} from '@rd/core';
-import {flatMap, map, toArray} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {of as observableOf} from 'rxjs';
-import {CoreApiSelector} from '@rd/core';
 import { InfiniteScrollService } from '../../infinite-scroll/infinite-scroll.service';
 
 @Component({

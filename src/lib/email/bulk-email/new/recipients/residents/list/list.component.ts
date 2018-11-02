@@ -3,11 +3,7 @@ import {of as observableOf,  Observable, Subscription } from 'rxjs';
 import {map} from 'rxjs/operators';
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, Input, Inject, NgZone, Output, EventEmitter, ViewChild } from '@angular/core';
 
-import { CoreApiSelector } from '@rd/core';
-
-import {GetResidentsBulkEmail} from '../../../../../shared/stored-procedure';
-import {StoredProcedureModule } from '../../../../../shared/stored-procedure/stored-procedure.module';
-import { ApiSelectorEmitter } from '../../shared/api-selector-emitter';
+import {GetResidentsBulkEmail} from '../../../../../shared/stored-procedure/get-residents-bulk-email';
 import { FilterDirective } from '../../../shared/recipient-filters/shared/filter.directive';
 import { Recipient, RecipientResult } from '../../shared/recipient';
 import { RecipientModel } from '../../shared/recipient.model';

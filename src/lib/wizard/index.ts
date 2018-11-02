@@ -1,3 +1,3 @@
-export * from './wizard.module';
-export * from './wizard-pane.directive';
-export * from './wizard.directive';
+export { WizardModule } from './wizard.module';
+export { WizardPaneDirective } from './wizard-pane.directive';
+export { WizardDirective } from './wizard.directive';

@@ -1,7 +1,6 @@
 
 import {throwError as observableThrowError, Observable} from 'rxjs';
 import {Injectable} from '@angular/core';
-import {URLSearchParams} from '@angular/http';
 
 import {CoreApiService} from '@rd/core';
 

@@ -1,6 +1,6 @@
-export * from './manage-photos-modal';
-export * from './manage-photo-modal';
+export { ManagePhotosModalComponent } from './manage-photos-modal';
+export { ManagePhotoModalComponent } from './manage-photo-modal';
 export * from './shared';
-export * from './photos.module';
-export * from './photos.service';
-export * from './photos-uploader';
+export { PhotosModule } from './photos.module';
+export { PhotosService } from './photos.service';
+export { PhotosUploader } from './photos-uploader';

@@ -1,1 +1,1 @@
-export * from './email-preview-inline.component';
+export { EmailPreviewInlineComponent } from './email-preview-inline.component';

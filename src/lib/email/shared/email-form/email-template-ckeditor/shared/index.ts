@@ -1,1 +1,1 @@
-export * from './fill-point.model';
+export { FillPoint } from './fill-point.model';

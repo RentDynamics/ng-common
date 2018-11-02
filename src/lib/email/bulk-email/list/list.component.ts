@@ -1,11 +1,10 @@
 
 import {switchMap} from 'rxjs/operators';
 import { Component, ChangeDetectorRef, OnInit, Inject, Input } from '@angular/core';
-import { Observable ,  Observer ,  Subject, Subscription } from 'rxjs';
 
 import { CoreApiService, CoreApiSelector } from '@rd/core';
 
-import { BulkEmailMessage, BulkEmailMessageModel } from '../../shared/bulk-email-message';
+import { BulkEmailMessageModel } from '../../shared/bulk-email-message/bulk-email-message.model';
 import { InfiniteScrollService } from '../../../infinite-scroll/infinite-scroll.service';
 
 @Component({

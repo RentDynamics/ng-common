@@ -9,8 +9,6 @@ import {
 
 import * as moment from 'moment';
 
-import { DATE_TYPE_ENUM } from '@rd/forms';
-
 @Component({
   selector: 'rd-contact-range-filter',
   templateUrl: './contact-range-filter.component.html',

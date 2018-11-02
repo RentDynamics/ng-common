@@ -1,1 +1,1 @@
-export * from './tab-nav.component';
+export { TabNavComponent } from './tab-nav.component';

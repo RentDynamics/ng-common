@@ -3,7 +3,6 @@ import {of as observableOf,  Observable ,  Observer ,  Subject } from 'rxjs';
 
 import {toArray, mergeMap, debounceTime, tap, switchMap, catchError, map} from 'rxjs/operators';
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ChangeDetectorRef } from '@angular/core';
-import * as moment from 'moment';
 
 import { CoreApiService, CoreApiSelector } from '@rd/core';
 
@@ -11,7 +10,6 @@ import { CoreApiService, CoreApiSelector } from '@rd/core';
 import { InfiniteScrollService } from '../../../../../infinite-scroll/infinite-scroll.service';
 import { WORKFLOW_ENUM } from '../../../../shared/workflow/workflow.enum';
 import { Lead } from '../../../../shared/lead/lead';
-import { BulkEmailBuilderService } from '../../shared/bulk-email-builder.service';
 import { FilterGroupDirective } from '../../shared/recipient-filters/filter-group.directive';
 import { RecipientModel } from '../shared/recipient.model';
 import { Recipient, RecipientResult } from '../shared/recipient';

@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { CoreApiService } from '@rd/core';
-import { OptionDirective } from '@rd/forms';
 
 @Component({
   selector: 'rd-button-selector',

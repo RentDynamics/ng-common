@@ -2,7 +2,6 @@ import {
   AfterViewInit, Directive, ElementRef, Input, Output, OnChanges, OnDestroy, EventEmitter, SimpleChange, SimpleChanges,
   NgZone
 } from '@angular/core';
-import * as moment from 'moment';
 
 import { extend, equals } from '@rd/core';
 import 'fullcalendar';

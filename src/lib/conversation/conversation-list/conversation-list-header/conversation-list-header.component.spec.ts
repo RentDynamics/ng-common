@@ -11,7 +11,7 @@ describe('ConversationListHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConversationListHeaderComponent ],
+      declarations: [ConversationListHeaderComponent ],
       imports: [ReactiveFormsModule],
       schemas: [NO_ERRORS_SCHEMA]
       // providers: [{ provide: FormBuilder, useValue: { group: () => {}  } }]

@@ -6,7 +6,6 @@ import {
   ChangeDetectorRef, Component, OnInit, Input, Output, EventEmitter,
   NgZone, ViewChild
 } from '@angular/core';
-import * as moment from 'moment';
 
 import { CoreApiService, CoreApiSelector } from '@rd/core';
 

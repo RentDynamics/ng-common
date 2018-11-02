@@ -1,11 +1,7 @@
 
 import {of as observableOf,  Observable ,  Observer ,  Subject } from 'rxjs';
 import { Component, OnInit, Input, Output, OnChanges, EventEmitter, SimpleChange, SimpleChanges, ViewChild } from '@angular/core';
-import * as moment from 'moment';
 
-import { CoreApiService, CoreApiSelector } from '@rd/core';
-
-import { RecipientModel } from '../shared/recipient.model';
 import { RecipientResult } from '../shared/recipient';
 import { SELECTION_TYPE } from '../shared/selection-type.enum';
 import { Recipient } from '../shared/recipient';

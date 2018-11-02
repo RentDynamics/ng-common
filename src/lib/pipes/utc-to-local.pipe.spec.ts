@@ -1,6 +1,5 @@
 /* tslint:disable:no-unused-variable */
 
-import { ChangeDetectorRef } from '@angular/core';
 import { TestBed, async, inject } from '@angular/core/testing';
 
 import { CoreApiService, TextMsgItApiService } from '@rd/core';

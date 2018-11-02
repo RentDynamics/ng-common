@@ -1,1 +1,1 @@
-export * from './tabs.service';
+export { TabsService } from './tabs.service';

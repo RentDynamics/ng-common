@@ -1,2 +1,2 @@
-export * from './email-template-ckeditor.component';
-export * from './shared';
+export { EmailTemplateCkeditorComponent } from './email-template-ckeditor.component';
+export { FillPoint } from './shared/fill-point.model';
