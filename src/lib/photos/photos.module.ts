@@ -10,8 +10,8 @@ import { PhotosService } from './photos.service';
 import { PhotosUploader } from './photos-uploader';
 import { ManagePhotosModalComponent } from './manage-photos-modal/manage-photos-modal.component';
 import { ManagePhotoModalComponent } from './manage-photo-modal/manage-photo-modal.component';
-import { UploadModule } from '@rd/common/src/lib/upload/upload.module';
-import { ModalModule } from '@rd/common/src/lib/modal/modal.module';
+import { UploadModule } from '@rd/common/src/lib/upload';
+import { ModalModule } from '@rd/common/src/lib/modal';
 
 @NgModule({
   imports: [
