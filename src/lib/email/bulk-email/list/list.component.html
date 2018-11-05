@@ -9,14 +9,20 @@
   </select>
 </div>-->
 
-<div *ngIf="(!bulkEmailMessages || bulkEmailMessages.length === 0) && !loading">No sent emails</div>
+<div *ngIf="(!bulkEmailMessages || bulkEmailMessages.length === 0) && !loading">
+  No sent emails
+</div>
 
 <div *ngIf="bulkEmailMessages && bulkEmailMessages.length > 0">
-  <rd-bulk-email-list-item *ngFor="let message of bulkEmailMessages" [message]="message" (click)="openMessageModal(message)"></rd-bulk-email-list-item>
+  <rd-bulk-email-list-item *ngFor="let message of bulkEmailMessages" [message]="message" (click)="openMessageModal(message)">
 
-  <div class="btn btn-default" style="margin-top: 15px;" *ngIf="!loading && (bulkEmailMessages.length !== messageCount)" (click)="nextPage()">Show more</div>
+  </rd-bulk-email-list-item>
 
-  <rd-bulk-email-modal *ngIf="messageModalActive && activeMessage" [message]="activeMessage" (hidden)="messageModalActive = false"></rd-bulk-email-modal>
+  <div class="btn btn-default" style="margin-top: 15px;" *ngIf="!loading && (bulkEmailMessages.length !== messageCount)"
+    (click)="nextPage()">
+    Show more
+  </div>
+
 </div>
 
 <rd-loading-indicator *ngIf="loading" [height]="75" [width]="75" [src]="'/assets/images/loading-bubbles-dark.svg'">

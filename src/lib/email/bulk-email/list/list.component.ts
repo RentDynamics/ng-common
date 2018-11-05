@@ -1,5 +1,5 @@
-
-import {switchMap} from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import { Component, ChangeDetectorRef, OnInit, Inject, Input } from '@angular/core';
 
 import { CoreApiService, CoreApiSelector } from '@rd/core';
@@ -14,7 +14,8 @@ import { InfiniteScrollService } from '../../../infinite-scroll/infinite-scroll.
   providers: [InfiniteScrollService]
 })
 export class ListComponent implements OnInit {
-  @Input() communityGroupId = 0;
+  @Input()
+  communityGroupId = 0;
 
   bulkEmailMessages: BulkEmailMessageModel[] = [];
   messageCount: number;
@@ -25,9 +26,13 @@ export class ListComponent implements OnInit {
   activeMessage: any;
   loading = true;
 
-  constructor(private coreApiSvc: CoreApiService, @Inject('SessionService') public sessionSvc: any,
-  private changeDetectorRef: ChangeDetectorRef, public infiniteScroll: InfiniteScrollService) {
-      this.infiniteScroll.pageSize = 4;
+  constructor(
+    private coreApiSvc: CoreApiService,
+    @Inject('SessionService') public sessionSvc: any,
+    private changeDetectorRef: ChangeDetectorRef,
+    public infiniteScroll: InfiniteScrollService
+  ) {
+    this.infiniteScroll.pageSize = 4;
   }
 
   ngOnInit() {
@@ -35,7 +40,9 @@ export class ListComponent implements OnInit {
       this.communityGroupId = this.sessionSvc.getSelectedCommunityGroupID();
     }
 
-    this.communityGroup = this.sessionSvc.getSessionCommunityGroupsAsQueryable({ id: +this.communityGroupId }).toArray()[0];
+    this.communityGroup = this.sessionSvc
+      .getSessionCommunityGroupsAsQueryable({ id: +this.communityGroupId })
+      .toArray()[0];
     this.getBulkMessages();
   }
 
@@ -46,16 +53,25 @@ export class ListComponent implements OnInit {
 
   getBulkMessages() {
     this.loading = true;
-    return this.infiniteScroll.currentPage$.pipe(switchMap(page => {
-      return this.coreApiSvc.get(this.getSelector(page).stringify());
-    })).subscribe((results) => {
-      this.messageCount = results.count;
-      this.bulkEmailMessages = this.bulkEmailMessages.concat(results.data.map(result => new BulkEmailMessageModel(result)));
-      this.loading = false;
-      this.changeDetectorRef.detectChanges();
-    }, (err) => {
-      this.loading = false;
-    });
+    return this.infiniteScroll.currentPage$
+      .pipe(
+        switchMap(page => {
+          return this.coreApiSvc.get(this.getSelector(page).stringify());
+        })
+      )
+      .subscribe(
+        results => {
+          this.messageCount = results.count;
+          this.bulkEmailMessages = this.bulkEmailMessages.concat(
+            results.data.map(result => new BulkEmailMessageModel(result))
+          );
+          this.loading = false;
+          this.changeDetectorRef.detectChanges();
+        },
+        err => {
+          this.loading = false;
+        }
+      );
   }
 
   getSelector(page?: number) {
@@ -64,7 +80,14 @@ export class ListComponent implements OnInit {
       page: page,
       pageSize: this.messagesToDisplay,
       orderBy: '-created',
-      include: ['sent', 'opened', 'clicked', 'pending', 'failed', 'unsubscribed']
+      include: [
+        'sent',
+        'opened',
+        'clicked',
+        'pending',
+        'failed',
+        'unsubscribed'
+      ]
     });
   }
 

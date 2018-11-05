@@ -1,9 +1,11 @@
 export { EmailModule } from './email.module';
-// export { BulkEmailComponent } from './bulk-email/bulk-email.component';
+export { BulkEmailModule } from './bulk-email/bulk-email.module';
 // export { NewComponent } from './bulk-email/new/new.component';
 // export { BulkEmailNewModule } from './bulk-email/new/new.module';
 // export { MessageChangeFieldDirective } from './bulk-email/new/message/shared/message-change-field.directive';
-// export { BrowserMobilePreviewComponent, BrowserMobilePreviewModule, PLATFORM } from './shared/index';
+// export { BrowserMobilePreviewComponent } from './shared/browser-mobile-preview/browser-mobile-preview.component';
+// export { BrowserMobilePreviewModule } from './shared/browser-mobile-preview/browser-mobile-preview.module';
+export { PLATFORM } from './shared/browser-mobile-preview/platform.enum';
 export { Recipient, RecipientResult } from './bulk-email/new/recipients/shared/recipient';
 // export { FilterGroupDirective } from './bulk-email/new/shared/recipient-filters/filter-group.directive';
 export { RecipientModel } from './bulk-email/new/recipients/shared/recipient.model';
