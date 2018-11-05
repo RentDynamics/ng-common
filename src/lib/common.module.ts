@@ -23,7 +23,7 @@ import { PipesModule } from './pipes/pipes.module';
         // ModalComponent, ModalShowButton, ModalHideButton, ModalToggleButton,
         // TelephonePipe,
         // TabComponent, TabNavComponent, TabsetComponent,
-        // UploadComponent,
+        // UploadComponent
         // UploadFileQueueComponent, UploadFilePreviewComponent,
         // UploadFileDropZoneComponent,
         // UploadFileProgressBarComponent, UploadFileSelectButtonComponent,

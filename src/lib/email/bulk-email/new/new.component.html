@@ -1,6 +1,6 @@
 <div class="email__header">New Bulk Email for <strong>{{communityGroup?.name}}</strong>
-  <div class="btn btn-default pull-right" >
-  <!-- (click)="$state.go('rd.communicationCenter.unprocessedEmail.bulk')"> -->
+  <div class="btn btn-default pull-right">
+    <!-- (click)="$state.go('rd.communicationCenter.unprocessedEmail.bulk')"> -->
     Cancel
   </div>
 </div>
@@ -26,7 +26,7 @@
       <button *ngIf="!wizard.isLast()" class="btn btn-success" (click)="wizard.next()">Next</button>
       <button *ngIf="wizard.isLast()" class="btn btn-warning" [disabled]="isReviewBtnDisabled()" (click)="sendMessage()">Send
         email to {{recipientCount}} people</button>
-        <!-- {{wizard?.activePane?.isDebouncing}} -->
+      <!-- {{wizard?.activePane?.isDebouncing}} -->
     </div>
   </div>
 
@@ -38,19 +38,22 @@
         <rd-bulk-email-recipients *ngIf="!isSending && wizard.isActive(recipientsPane)" [communityGroupId]="communityGroup?.id"
           [filters]="filters" [recipientType]="recipientType" [recipients]="recipients" [listRecipients]="listRecipients"
           (onRecipientsChange)="onRecipientsChange($event)" (onFiltersChange)="onFiltersChange($event)"
-          (onRecipientTypeChange)="onRecipientTypeChange($event)" (onListSelectionChange)="onListSelectionChange($event)"></rd-bulk-email-recipients>
+          (onRecipientTypeChange)="onRecipientTypeChange($event)" (onListSelectionChange)="onListSelectionChange($event)">
+        </rd-bulk-email-recipients>
       </div>
 
       <div rdWizardPane #messagePane="rdWizardPane" icon="stream stream-email-text" displayName="Message"
         [requireValid]="true" [valid]="message?.isValid()" [errorMsg]="message?.getValidationMsg()">
         <rd-bulk-email-message *ngIf="!isSending && wizard.isActive(messagePane)" [communityGroupId]="communityGroup?.id"
-          [message]="message" (onMessageChange)="onMessageChange($event)"></rd-bulk-email-message>
+          [message]="message" (onMessageChange)="onMessageChange($event)">
+        </rd-bulk-email-message>
       </div>
 
-      <div rdWizardPane #reviewPane="rdWizardPane" icon="stream stream-email-send" displayName="Review & Send">
+      <!-- <div rdWizardPane #reviewPane="rdWizardPane" icon="stream stream-email-send" displayName="Review & Send">
         <rd-bulk-email-review *ngIf="!isSending && wizard.isActive(reviewPane)" [recipientCount]="recipientCount"
-          [sampleRecipient]="recipients[0]" [message]="message" (onInit)="onReviewPaneInit($event)" (onCompile)="onCompileEmail($event)"></rd-bulk-email-review>
-      </div>
+          [sampleRecipient]="recipients[0]" [message]="message" (onInit)="onReviewPaneInit($event)" (onCompile)="onCompileEmail($event)">
+        </rd-bulk-email-review>
+      </div> -->
 
       <rd-loading-indicator *ngIf="isSending" [height]="75" [width]="75"></rd-loading-indicator>
     </rd-bulk-email-container>

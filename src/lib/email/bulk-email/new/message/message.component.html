@@ -1,10 +1,10 @@
 <form #messageForm="ngForm" class="emailBulkCompose">
 
-    <div #sessionCommunityGrpCommunity="rdSessionCommunityGroupCommunity" rdSessionCommunityGroupCommunity [communityGroupId]="communityGroupId"
+    <!-- <div #sessionCommunityGrpCommunity="rdSessionCommunityGroupCommunity" rdSessionCommunityGroupCommunity [communityGroupId]="communityGroupId"
         (result)="communityGroupCommunities = $event">
-    </div>
+    </div> -->
 
-    <div class="emailCompose__logo">
+    <!-- <div class="emailCompose__logo">
         <div style="text-align:center;">
             <rd-file-relation-type-select *ngIf="sessionCommunityGrpCommunity?.hasMoreThanOneCommunity(communityGroupId)" [communities]="communityGroupCommunities"
                 [communityGroup]="communityGroup" [fileRelationType]="message.fileRelationType" (change)="message.fileRelationType = $event"></rd-file-relation-type-select>
@@ -23,7 +23,7 @@
         ngDefaultControl name="body"></rd-email-template-ckeditor>
 
     <div class="emailCompose__callToAction">
-        <rd-call-to-action-select rdMessageChangeField [key]="'callToAction'" [value]="message?.callToAction" [communityGroupId]="communityGroupId" 
+        <rd-call-to-action-select rdMessageChangeField [key]="'callToAction'" [value]="message?.callToAction" [communityGroupId]="communityGroupId"
             [communityId]="message.callToActionCommunityId" (communityIdChange)="message.callToActionCommunityId = $event">
         </rd-call-to-action-select>
     </div>
@@ -31,7 +31,7 @@
     <div class="emailCompose__footer">
         <rd-footer-select rdMessageChangeField [key]="'footer'" [communityGroupCommunities]="communityGroupCommunities" [communityGroupId]="communityGroupId"
             [footer]="message?.footer"></rd-footer-select>
-    </div>
+    </div> -->
 
 </form>
 

@@ -10,7 +10,7 @@ export * from './loading-indicator/index';
 export * from './pipes/index';
 export * from './photos/index';
 export * from './messaging/index';
-export * from './modal/index';
+// export * from './modal/index';
 export * from './simple-sort/index';
 export * from './tabset/index';
 // export {TelephonePipe} from './pipes/index';

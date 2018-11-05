@@ -1,11 +1,11 @@
-<rd-button-group [(ngModel)]="recipientType" (change)="updateRecipientType($event)">
-  <rd-button-group-button class="btn btn-default" [value]="RECIPIENT_TYPE.RESIDENTS">Residents</rd-button-group-button>
+<!-- <rd-button-group [(ngModel)]="recipientType" (change)="updateRecipientType($event)">
+ <rd-button-group-button class="btn btn-default" [value]="RECIPIENT_TYPE.RESIDENTS">Residents</rd-button-group-button>
   <rd-button-group-button class="btn btn-default" [value]="RECIPIENT_TYPE.LEADS">Leads</rd-button-group-button>
-</rd-button-group>
+</rd-button-group> -->
 
-<rd-bulk-email-leads *ngIf="recipientType === RECIPIENT_TYPE.LEADS" [communityGroupId]="communityGroupId"
-  (onRecipientsChange)="onRecipientsChange.emit($event)" [filters]="filters" (onFiltersChange)="onFiltersChange.emit($event)"></rd-bulk-email-leads>
+<!-- <rd-bulk-email-leads *ngIf="recipientType === RECIPIENT_TYPE.LEADS" [communityGroupId]="communityGroupId"
+  (onRecipientsChange)="onRecipientsChange.emit($event)" [filters]="filters" (onFiltersChange)="onFiltersChange.emit($event)"></rd-bulk-email-leads> -->
 
-<rd-bulk-email-residents *ngIf="recipientType === RECIPIENT_TYPE.RESIDENTS" [communityGroupId]="communityGroupId" [selectedRecipients]="recipients"
+<!-- <rd-bulk-email-residents *ngIf="recipientType === RECIPIENT_TYPE.RESIDENTS" [communityGroupId]="communityGroupId" [selectedRecipients]="recipients"
   (onRecipientsChange)="onRecipientsChange.emit($event)" [filters]="filters" [listRecipients]="listRecipients" (onListSelectionChange)="onListSelectionChange.emit($event)"
-  (onFiltersChange)="onFiltersChange.emit($event)"></rd-bulk-email-residents>
+  (onFiltersChange)="onFiltersChange.emit($event)"></rd-bulk-email-residents> -->

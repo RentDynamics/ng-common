@@ -4,13 +4,13 @@ import { CommonModule } from '@angular/common';
 // import { RdAngularFormsModule } from '@rd/forms';
 
 import { BulkEmailComponent } from './bulk-email.component';
-// import { BulkEmailNewModule } from './new/new.module';
+import { BulkEmailNewModule } from './new/new.module';
 import { BulkEmailListModule } from './list/list.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    // BulkEmailNewModule,
+    BulkEmailNewModule,
     BulkEmailListModule,
     // RdAngularFormsModule,
   ],
