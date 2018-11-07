@@ -7,7 +7,7 @@ import { CoreApiService } from '@rd/core';
 // import { environment } from '../../../../../environments/environment';
 
 import { FileUploader } from 'ng2-file-upload';
-import { BootstrapModalComponent } from '../../../../../modal/bootstrap-modal/bootstrap-modal.component';
+import { BootstrapModalComponent } from '@rd/common/src/lib/modal/bootstrap-modal/bootstrap-modal.component';
 
 @Component({
   selector: 'rd-email-template-file-uploader-modal',
