@@ -12,7 +12,6 @@ import { BulkEmailListModule } from './list/list.module';
     CommonModule,
     BulkEmailNewModule,
     BulkEmailListModule,
-    // RdAngularFormsModule,
   ],
   declarations: [
     BulkEmailComponent,

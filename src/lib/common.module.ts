@@ -14,6 +14,7 @@ import { SimpleSortModule } from './simple-sort/simple-sort.module';
 // import { ToastModule } from './toast/index';
 import { IFrameModule } from './iframe/iframe.module';
 import { PipesModule } from './pipes/pipes.module';
+import { BulkEmailModule, EmailModule } from './email';
 
 @NgModule({
     declarations: [
@@ -56,6 +57,7 @@ import { PipesModule } from './pipes/pipes.module';
         // UploadFileDropZoneComponent,
         // UploadFileProgressBarComponent, UploadFileSelectButtonComponent,
         // UploadFileSubmitButtonComponent,
+        EmailModule,
         SimpleSortModule,
         IFrameModule,
         LoadingIndicatorModule,
