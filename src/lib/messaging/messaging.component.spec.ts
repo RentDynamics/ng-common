@@ -5,7 +5,6 @@ import { of as observableOf } from 'rxjs';
 import { MessagingComponent } from './messaging.component';
 import { ApiOldApiService, CoreApiService } from '@rd/core';
 import { CoreApiServiceMock } from '@rd/core/testing';
-import {LocalStorage} from '@ngx-pwa/local-storage';
 import {ConversationListItemModel} from '../conversation/conversation-list/conversation-list-item/conversation-list-item.model';
 import * as moment from 'moment';
 
