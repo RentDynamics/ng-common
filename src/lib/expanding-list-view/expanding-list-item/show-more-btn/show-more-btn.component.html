@@ -1,0 +1,8 @@
+<div class="row follow-up-footer">
+  <div class="col-sm-12 btn btn-default" (click)="onShowMoreClick(!active)">
+    <span *ngIf="!active">Show more</span>
+    <span *ngIf="active">Show less</span>
+    &nbsp;
+    <i class="stream" [ngClass]="{'stream-arrow-down': !active, 'stream-arrow-up': active}"></i>
+  </div>
+</div>

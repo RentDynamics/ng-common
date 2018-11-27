@@ -1,0 +1,21 @@
+<rd-expanding-list-view class="collapse-card communication-center-email" (toggle)="onOpenClick($event)" [open]="open" [style.borderColor]="backgroundColor"
+  [ngClass]="rdInnerClass">
+
+  <ng-content select="[inject-item-pre-header]"></ng-content>
+
+  <div rd-expanding-list-view-header [style.backgroundColor]="open ? backgroundColor : null" [class.collapse-card__heading]="open">
+    <div class="collapse-card__title" [style.color]="open ? foregroundColor : null">
+
+      <ng-content select="[inject-item-header]"></ng-content>
+
+    </div>
+  </div>
+
+  <div rd-expanding-list-view-body>
+
+    <ng-content select="[inject-item-body]"></ng-content>
+    
+    <ng-content select="[inject-item-footer]"></ng-content>
+
+  </div>
+</rd-expanding-list-view>
