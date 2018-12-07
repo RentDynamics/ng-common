@@ -102,7 +102,7 @@ export class SmsConversationListComponent extends ConversationListComponent impl
   // }
 
   nextPage(){
-    
+
   }
 
 }

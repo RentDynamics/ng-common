@@ -15,3 +15,4 @@ export * from './imgix/index';
 export * from './infinite-scroll/index';
 export * from './messaging/index';
 export * from './wizard/index';
+export * from './bulk-email-list/index';
