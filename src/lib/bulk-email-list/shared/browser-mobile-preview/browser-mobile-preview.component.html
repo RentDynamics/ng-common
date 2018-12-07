@@ -1,0 +1,42 @@
+<div class="emailPreview__container">
+  <div class="btn-group">
+    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform == PLATFORM.MOBILE" [value]="PLATFORM.MOBILE" (click)="displayPlatform = PLATFORM.MOBILE">Mobile</button>
+    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform == PLATFORM.BROWSER" [value]="PLATFORM.BROWSER" (click)="displayPlatform = PLATFORM.BROWSER">Desktop</button>
+  </div>
+
+  <label style="display: block;margin-top: 15px;">
+    <input type="checkbox" [checked]="parseRdmlOnLoad" (change)="onToggleRdml($event)" /> Show sample person in message
+  </label>
+
+  <!-- browser -->
+  <div *ngIf="displayPlatform === PLATFORM.BROWSER" class="emailPreview--desktop" (click)="preventDefault($event)">
+    <div class="desktopFrame">
+      <div class="browserFrame">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+        <div class="emailSubject"><strong>Subject: </strong>{{subject}}</div>
+      </div>
+
+      <div class="wrapper">
+        <iframe #iframe [rdHtml]="previewHtml" frameborder="0" (load)="resizeIFrame($event)"></iframe>
+      </div>
+
+    </div>
+    <div class="desktopBottom"></div>
+  </div>
+
+  <!-- mobile -->
+  <div *ngIf="displayPlatform === PLATFORM.MOBILE" class="emailPreview--phone" (click)="preventDefault($event)">
+    <div class="phoneFrame">
+      <span>Inbox</span>
+      <div class="emailSubject"><strong>Subject: </strong>{{subject}}</div>
+    </div>
+
+    <div class="wrapper">
+      <iframe #iframe [rdHtml]="previewHtml" frameborder="0" (load)="resizeIFrame($event)"></iframe>
+    </div>
+
+  </div>
+
+</div>

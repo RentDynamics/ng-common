@@ -1,0 +1,11 @@
+<div class="collapse-card collapse-card__heading card-bulk-email">
+  <div class="collapse-card__title">
+    <div class="row">
+      <div class="col-sm-4"><strong>{{message?.subject}}</strong></div>
+      <div class="col-sm-2" style="text-align:right;"><strong>{{ message?.sent }}</strong> sent</div>
+      <div class="col-sm-2" style="text-align:right;"><strong>{{ ((message?.opened + message?.clicked + message?.unsubscribed) / message?.sent) | percent:'.0-0' }}</strong> opened</div>
+      <div class="col-sm-2" style="text-align:right;"><strong>{{ (message?.clicked / message?.sent) | percent:'.0-0' }}</strong> clicked</div>
+      <div class="col-sm-2" style="text-align:right;">{{message?.created | date: 'shortDate'}}</div>
+    </div>
+  </div>
+</div>

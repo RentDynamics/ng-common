@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'rd-expanding-list-item > rd-show-more-btn',
+  selector: 'rd-expanding-bulk-email-list-item > rd-show-more-btn',
   templateUrl: './show-more-btn.component.html',
   styleUrls: ['./show-more-btn.component.less']
 })

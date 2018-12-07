@@ -13,7 +13,7 @@
   "license": "MIT",
   "engines": {
     "node": ">=8.9.4",
-    "npm": ">=5.6.0"
+    "npm": ">=6.4.1"
   },
   "scripts": {
     "build": "ng b",
@@ -66,6 +66,8 @@
     "@angular/platform-browser-dynamic": "6.1.0",
     "@angular/router": "6.1.0",
     "@rd/core": "4.1.0",
+    "@rd/forms": ">=4.0.0",
+    "@rd/compiler": "4.0.0",
     "@types/bootstrap": "3.3.38",
     "@types/ckeditor": "0.0.45",
     "@types/jasmine": "2.8.6",
