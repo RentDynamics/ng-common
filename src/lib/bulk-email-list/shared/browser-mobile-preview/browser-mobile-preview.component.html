@@ -1,7 +1,9 @@
 <div class="emailPreview__container">
   <div class="btn-group">
-    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform == PLATFORM.MOBILE" [value]="PLATFORM.MOBILE" (click)="displayPlatform = PLATFORM.MOBILE">Mobile</button>
-    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform == PLATFORM.BROWSER" [value]="PLATFORM.BROWSER" (click)="displayPlatform = PLATFORM.BROWSER">Desktop</button>
+    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform == PLATFORM.MOBILE" [value]="PLATFORM.MOBILE"
+      (click)="displayPlatform = PLATFORM.MOBILE">Mobile</button>
+    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform == PLATFORM.BROWSER" [value]="PLATFORM.BROWSER"
+      (click)="displayPlatform = PLATFORM.BROWSER">Desktop</button>
   </div>
 
   <label style="display: block;margin-top: 15px;">
