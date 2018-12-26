@@ -3,10 +3,11 @@ import {switchMap} from 'rxjs/operators';
 import { Component, ChangeDetectorRef, OnInit, Inject, Input} from '@angular/core';
 import { Observable ,  Observer ,  Subject, Subscription } from 'rxjs';
 
-import { CoreApiService, CoreApiSelector } from '@rd/core';
 import { InfiniteScrollService } from '../infinite-scroll';
 
 import { BulkEmailMessageModel } from './bulk-email-message.model';
+import { BulkEmailDataService } from './bulk-email-data-service';
+
 
 @Component({
   selector: 'rd-bulk-email-list',
@@ -25,10 +26,10 @@ export class ListComponent implements OnInit {
   activeMessage: any;
   loading = true;
 
-  constructor(private coreApiSvc: CoreApiService,
-    private changeDetectorRef: ChangeDetectorRef,
-    public infiniteScroll: InfiniteScrollService
-  ) {
+  constructor(
+      private changeDetectorRef: ChangeDetectorRef,
+      public infiniteScroll: InfiniteScrollService,
+      public bulkEmailDataSvc: BulkEmailDataService) {
       this.infiniteScroll.pageSize = 4;
   }
 
@@ -44,7 +45,7 @@ export class ListComponent implements OnInit {
   getBulkMessages() {
     this.loading = true;
     return this.infiniteScroll.currentPage$.pipe(switchMap(page => {
-      return this.coreApiSvc.get(this.getSelector(page).stringify());
+      return this.bulkEmailDataSvc.getCommunityBulkEmailMessages(this.communityGroupId, this.messagesToDisplay, page);
     })).subscribe((results) => {
         this.messageCount = results.count;
         this.bulkEmailMessages = this.bulkEmailMessages.concat(results.data.map(result => new BulkEmailMessageModel(result)));
@@ -53,23 +54,6 @@ export class ListComponent implements OnInit {
       }, (err) => {
          this.loading = false;
       });
-  }
-
-  getSelector(page?: number) {
-    return new CoreApiSelector({
-      endpoint: `/communityGroups/${this.communityGroupId}/bulkEmailMessages`,
-      page: page,
-      pageSize: this.messagesToDisplay,
-      orderBy: '-created',
-      include: [
-        'sent',
-        'opened',
-        'clicked',
-        'pending',
-        'failed',
-        'unsubscribed'
-      ]
-    });
   }
 
   nextPage() {
@@ -89,4 +73,5 @@ export class ListComponent implements OnInit {
     this.messageModalActive = true;
     this.activeMessage = message;
   }
+
 }

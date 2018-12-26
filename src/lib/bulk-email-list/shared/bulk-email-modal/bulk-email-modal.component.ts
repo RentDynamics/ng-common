@@ -10,6 +10,7 @@ import { BulkEmailMessageModel } from '../../bulk-email-message.model';
 })
 export class BulkEmailModalComponent implements OnInit {
   @Input() message: BulkEmailMessageModel = null;
+  @Input() recipientStatusEndpoint: string;
   @Output() hidden = new EventEmitter();
 
   EMAIL_MESSAGE_STATUS_TYPE = EMAIL_MESSAGE_STATUS_TYPE;

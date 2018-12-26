@@ -1,6 +1,6 @@
 import { Subscription, Observable } from 'rxjs';
 
-import { NgModule } from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ModalModule } from '../modal/modal.module';
@@ -13,6 +13,7 @@ import { RecipientStatusListComponent } from './shared/recipient-status-list/rec
 import { LoadingIndicatorModule } from '../loading-indicator/loading-indicator.module';
 import { TabsetModule } from '../tabset/tabset.module';
 import { RdAngularFormsModule } from '@rd/forms';
+import { BulkEmailDataService } from './bulk-email-data-service';
 
 
 @NgModule({
@@ -28,13 +29,14 @@ import { RdAngularFormsModule } from '@rd/forms';
     ListComponent,
     BulkEmailListItemComponent,
     BulkEmailModalComponent,
-    RecipientStatusListComponent,
+    RecipientStatusListComponent
   ],
   exports: [
-    ListComponent,
+    ListComponent
   ],
   providers: [
-
+    BulkEmailDataService
   ]
 })
-export class BulkEmailListModule { }
+export class BulkEmailListModule {
+}
