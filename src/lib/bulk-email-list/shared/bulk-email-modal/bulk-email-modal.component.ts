@@ -26,5 +26,4 @@ export class BulkEmailModalComponent implements OnInit {
   onHidden($event){
     this.hidden.emit($event);
   }
-
 }
