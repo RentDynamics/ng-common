@@ -42,31 +42,47 @@
 
       <rd-tab #sentTab>
         <div *ngIf="sentTab.isActive()">
-          <rd-recipient-status-list [bulkMessageId]="message?.id" [status]="EMAIL_MESSAGE_STATUS_TYPE.SENT.toString()"></rd-recipient-status-list>
+          <rd-recipient-status-list
+                  [bulkMessageId]="message?.id"
+                  [status]="EMAIL_MESSAGE_STATUS_TYPE.SENT.toString()">
+
+          </rd-recipient-status-list>
         </div>
 			</rd-tab>
 
       <rd-tab #openedTab>
         <div *ngIf="openedTab.isActive()">
-          <rd-recipient-status-list [bulkMessageId]="message?.id" [status]="EMAIL_MESSAGE_STATUS_TYPE.OPENED +','+EMAIL_MESSAGE_STATUS_TYPE.CLICKED+','+EMAIL_MESSAGE_STATUS_TYPE.UNSUBSCRIBED"></rd-recipient-status-list>
+          <rd-recipient-status-list
+                  [bulkMessageId]="message?.id"
+                  [status]="EMAIL_MESSAGE_STATUS_TYPE.OPENED +','+EMAIL_MESSAGE_STATUS_TYPE.CLICKED+','+EMAIL_MESSAGE_STATUS_TYPE.UNSUBSCRIBED">
+          </rd-recipient-status-list>
         </div>
 			</rd-tab>
 
       <rd-tab #clickedTab>
         <div *ngIf="clickedTab.isActive()">
-          <rd-recipient-status-list [bulkMessageId]="message?.id" [status]="EMAIL_MESSAGE_STATUS_TYPE.CLICKED.toString()"></rd-recipient-status-list>
+          <rd-recipient-status-list
+                  [bulkMessageId]="message?.id"
+                  [status]="EMAIL_MESSAGE_STATUS_TYPE.CLICKED.toString()">
+          </rd-recipient-status-list>
         </div>
 			</rd-tab>
 
       <rd-tab #unsubscribedTab>
         <div *ngIf="unsubscribedTab.isActive()">
-          <rd-recipient-status-list [bulkMessageId]="message?.id" [status]="EMAIL_MESSAGE_STATUS_TYPE.UNSUBSCRIBED.toString()"></rd-recipient-status-list>
+          <rd-recipient-status-list
+                  [bulkMessageId]="message?.id"
+                  [status]="EMAIL_MESSAGE_STATUS_TYPE.UNSUBSCRIBED.toString()"
+          ></rd-recipient-status-list>
         </div>
 			</rd-tab>
 
       <rd-tab #failedTab>
         <div *ngIf="failedTab.isActive()">
-          <rd-recipient-status-list [bulkMessageId]="message?.id" [status]="EMAIL_MESSAGE_STATUS_TYPE.FAILED.toString()"></rd-recipient-status-list>
+          <rd-recipient-status-list
+                  [bulkMessageId]="message?.id"
+                  [status]="EMAIL_MESSAGE_STATUS_TYPE.FAILED.toString()">
+          </rd-recipient-status-list>
         </div>
 			</rd-tab>
     </rd-tabset>

@@ -3,10 +3,10 @@ import {switchMap} from 'rxjs/operators';
 import { Component, ChangeDetectorRef, OnInit, Input } from '@angular/core';
 import { Observable ,  Observer ,  Subject, Subscription } from 'rxjs';
 
-import { CoreApiService, CoreApiSelector } from '@rd/core';
 import { InfiniteScrollService } from '../../../infinite-scroll/infinite-scroll.service';
 
 import { EMAIL_MESSAGE_STATUS_TYPE } from '../../email-message-status-type.enum';
+import { BulkEmailDataService } from '../../bulk-email-data-service';
 
 @Component({
   selector: 'rd-recipient-status-list',
@@ -23,7 +23,9 @@ export class RecipientStatusListComponent implements OnInit {
   recipientsToDisplay: number = 10;
   loading = false;
 
-  constructor(private coreApiSvc: CoreApiService, public infiniteScroll: InfiniteScrollService, private changeDetectorRef: ChangeDetectorRef) { }
+  constructor(private changeDetectorRef: ChangeDetectorRef,
+              public infiniteScroll: InfiniteScrollService,
+              public bulkEmailDataSvc: BulkEmailDataService) { }
 
   ngOnInit() {
     if(this.bulkMessageId && this.status)
@@ -33,7 +35,15 @@ export class RecipientStatusListComponent implements OnInit {
   get() {
     this.loading = true;
     return this.infiniteScroll.currentPage$.pipe(switchMap(page => {
-      return this.coreApiSvc.get(this.getSelector(page).stringify())
+      return this.bulkEmailDataSvc.getPersonBulkEmailMessages(
+          this.bulkMessageId,
+          this.recipientsToDisplay,
+          page, this.getFilters(),
+          [
+            'person',
+            'person__email_address',
+            'email_message'
+          ])
     })).subscribe((results) => {
         this.recipientCount = results.count;
         this.recipients = this.recipients.concat(results.data);
@@ -44,7 +54,7 @@ export class RecipientStatusListComponent implements OnInit {
       });
   }
 
-  getSelector(page?: number){
+  getFilters() {
     let filters = {};
     let filterArr = this.status.split(',');
 
@@ -53,19 +63,7 @@ export class RecipientStatusListComponent implements OnInit {
     if(parseInt(filterArr[0]) != EMAIL_MESSAGE_STATUS_TYPE.SENT){
       filters['status'] = filterArr;
     }
-
-    return new CoreApiSelector(
-      {
-        endpoint: `/bulkEmailMessages/${this.bulkMessageId}/personBulkEmailMessages`,
-        page: page,
-        pageSize: this.recipientsToDisplay,
-        filters: filters,
-        include: [
-          'person',
-          'person__email_address',
-          'email_message'
-        ],
-      });
+    return filters;
   }
 
   nextPage() {
