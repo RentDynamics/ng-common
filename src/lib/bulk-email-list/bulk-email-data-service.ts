@@ -24,7 +24,7 @@ export class BulkEmailDataService {
         page?: number,
         filters?: any,
         includes?: string[],
-        communityId?: number
+        communityGroupId?: number
     ): Observable<BulkEmailMessageResponse> {
         return observableOf({data: [], count: null});
     }
