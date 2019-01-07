@@ -44,7 +44,8 @@
         <div *ngIf="sentTab.isActive()">
           <rd-recipient-status-list
                   [bulkMessageId]="message?.id"
-                  [status]="EMAIL_MESSAGE_STATUS_TYPE.SENT.toString()">
+                  [status]="EMAIL_MESSAGE_STATUS_TYPE.SENT.toString()"
+                  [communityGroupId]="communityGroupId">
 
           </rd-recipient-status-list>
         </div>
@@ -54,7 +55,8 @@
         <div *ngIf="openedTab.isActive()">
           <rd-recipient-status-list
                   [bulkMessageId]="message?.id"
-                  [status]="EMAIL_MESSAGE_STATUS_TYPE.OPENED +','+EMAIL_MESSAGE_STATUS_TYPE.CLICKED+','+EMAIL_MESSAGE_STATUS_TYPE.UNSUBSCRIBED">
+                  [status]="EMAIL_MESSAGE_STATUS_TYPE.OPENED +','+EMAIL_MESSAGE_STATUS_TYPE.CLICKED+','+EMAIL_MESSAGE_STATUS_TYPE.UNSUBSCRIBED"
+                  [communityGroupId]="communityGroupId">
           </rd-recipient-status-list>
         </div>
 			</rd-tab>
@@ -63,7 +65,8 @@
         <div *ngIf="clickedTab.isActive()">
           <rd-recipient-status-list
                   [bulkMessageId]="message?.id"
-                  [status]="EMAIL_MESSAGE_STATUS_TYPE.CLICKED.toString()">
+                  [status]="EMAIL_MESSAGE_STATUS_TYPE.CLICKED.toString()"
+                  [communityGroupId]="communityGroupId">
           </rd-recipient-status-list>
         </div>
 			</rd-tab>
@@ -73,7 +76,9 @@
           <rd-recipient-status-list
                   [bulkMessageId]="message?.id"
                   [status]="EMAIL_MESSAGE_STATUS_TYPE.UNSUBSCRIBED.toString()"
-          ></rd-recipient-status-list>
+                  [communityGroupId]="communityGroupId">
+
+          </rd-recipient-status-list>
         </div>
 			</rd-tab>
 
@@ -81,7 +86,8 @@
         <div *ngIf="failedTab.isActive()">
           <rd-recipient-status-list
                   [bulkMessageId]="message?.id"
-                  [status]="EMAIL_MESSAGE_STATUS_TYPE.FAILED.toString()">
+                  [status]="EMAIL_MESSAGE_STATUS_TYPE.FAILED.toString()"
+                  [communityGroupId]="communityGroupId">
           </rd-recipient-status-list>
         </div>
 			</rd-tab>

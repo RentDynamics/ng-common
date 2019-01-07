@@ -16,7 +16,7 @@
 
   <div class="btn btn-default" style="margin-top: 15px;" *ngIf="!loading && (bulkEmailMessages.length !== messageCount)" (click)="nextPage()">Show more</div>
 
-  <rd-bulk-email-modal *ngIf="messageModalActive && activeMessage" [message]="activeMessage" (hidden)="messageModalActive = false"></rd-bulk-email-modal>
+  <rd-bulk-email-modal *ngIf="messageModalActive && activeMessage" [message]="activeMessage" (hidden)="messageModalActive = false" [communityGroupId]="communityGroupId"></rd-bulk-email-modal>
 </div>
 
 <rd-loading-indicator *ngIf="loading" [height]="75" [width]="75"></rd-loading-indicator>

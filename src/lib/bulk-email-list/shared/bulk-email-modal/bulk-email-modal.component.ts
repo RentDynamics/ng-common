@@ -9,6 +9,7 @@ import { BulkEmailMessageModel } from '../../bulk-email-message.model';
   styleUrls: ['./bulk-email-modal.component.less']
 })
 export class BulkEmailModalComponent implements OnInit {
+  @Input() communityGroupId: number;
   @Input() message: BulkEmailMessageModel = null;
   @Output() hidden = new EventEmitter();
 

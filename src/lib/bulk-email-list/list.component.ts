@@ -27,7 +27,6 @@ export class ListComponent implements OnInit {
   loading = true;
 
   constructor(
-      private changeDetectorRef: ChangeDetectorRef,
       public infiniteScroll: InfiniteScrollService,
       public bulkEmailDataSvc: BulkEmailDataService) {
       this.infiniteScroll.pageSize = 4;
@@ -50,7 +49,6 @@ export class ListComponent implements OnInit {
         this.messageCount = results.count;
         this.bulkEmailMessages = this.bulkEmailMessages.concat(results.data.map(result => new BulkEmailMessageModel(result)));
         this.loading = false;
-        this.changeDetectorRef.detectChanges();
       }, (err) => {
          this.loading = false;
       });
