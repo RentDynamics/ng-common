@@ -36,6 +36,6 @@ export class BulkEmailModalComponent implements OnInit {
     this.tabCalculations['opened'] = message.sent > 0 ? ((message.opened + message.clicked + message.unsubscribed) / message.sent) : 0;
     this.tabCalculations['clicked'] = message.sent > 0 ? (message.clicked / message.sent) : 0;
     this.tabCalculations['unsubscribed'] = message.unsubscribed;
-    this.tabCalculations['failed'] = message.sent > 0 ? (message.failed / message.sent) : 0;
+    this.tabCalculations['failed'] = message.sent > 0 ? (message.failed / message.sent) : 0; 
   }
 }
