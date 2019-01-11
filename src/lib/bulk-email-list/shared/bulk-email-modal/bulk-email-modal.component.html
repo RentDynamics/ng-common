@@ -12,23 +12,23 @@
         </div>
         <div class="emailStats__navItem" [class.active]="sentTab.isActive()" (click)="tabset.selectTab(sentTab)">
           Sent
-          <div class="stat">{{ message?.sent }}</div>
+          <div class="stat">{{ tabCalculations['sent'] }}</div>
         </div>
         <div class="emailStats__navItem" [class.active]="openedTab.isActive()" (click)="tabset.selectTab(openedTab)">
           Opened
-          <div class="stat">{{ ((message?.opened + message?.clicked + message?.unsubscribed)/ message?.sent) | percent:'.0-0' }}</div>
+          <div class="stat">{{ tabCalculations['opened'] | percent:'.0-0' }}</div>
         </div>
         <div class="emailStats__navItem" [class.active]="clickedTab.isActive()" (click)="tabset.selectTab(clickedTab)">
           Clicked
-          <div class="stat">{{ (message?.clicked / message?.sent) | percent:'.0-0' }}</div>
+          <div class="stat">{{ tabCalculations['clicked'] | percent:'.0-0' }}</div>
         </div>
         <div class="emailStats__navItem" [class.active]="unsubscribedTab.isActive()" (click)="tabset.selectTab(unsubscribedTab)">
           Unsubscribed
-          <div class="stat">{{ message?.unsubscribed }}</div>
+          <div class="stat">{{ tabCalculations['unsubscribed'] }}</div>
         </div>
         <div class="emailStats__navItem" [class.active]="failedTab.isActive()" (click)="tabset.selectTab(failedTab)">
           Failed
-          <div class="stat">{{ (message?.failed / message?.sent) | percent:'.0-0' }}</div>
+          <div class="stat">{{ tabCalculations['failed'] | percent:'.0-0' }}</div>
         </div>
       </div>
       <rd-tab #previewTab>
