@@ -16,6 +16,7 @@ import { BulkEmailDataService } from '../../bulk-email-data-service';
 })
 export class RecipientStatusListComponent implements OnInit {
   @Input() bulkMessageId: number;
+  @Input() communityGroupId: number;
   @Input() status: string;
 
   recipients: any[] = [];
@@ -38,12 +39,14 @@ export class RecipientStatusListComponent implements OnInit {
       return this.bulkEmailDataSvc.getPersonBulkEmailMessages(
           this.bulkMessageId,
           this.recipientsToDisplay,
-          page, this.getFilters(),
+          page,
+          this.getFilters(),
           [
             'person',
             'person__email_address',
             'email_message'
-          ])
+          ],
+          this.communityGroupId);
     })).subscribe((results) => {
         this.recipientCount = results.count;
         this.recipients = this.recipients.concat(results.data);
