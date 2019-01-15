@@ -1,8 +1,8 @@
 <div class="emailPreview__container">
   <div class="btn-group">
-    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform == PLATFORM.MOBILE" [value]="PLATFORM.MOBILE"
+    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform === PLATFORM.MOBILE" [value]="PLATFORM.MOBILE"
       (click)="displayPlatform = PLATFORM.MOBILE">Mobile</button>
-    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform == PLATFORM.BROWSER" [value]="PLATFORM.BROWSER"
+    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform === PLATFORM.BROWSER" [value]="PLATFORM.BROWSER"
       (click)="displayPlatform = PLATFORM.BROWSER">Desktop</button>
   </div>
 
@@ -11,7 +11,7 @@
   </label>
 
   <!-- browser -->
-  <div *ngIf="displayPlatform === PLATFORM.BROWSER" class="emailPreview--desktop" (click)="preventDefault($event)">
+  <div *ngIf="displayPlatform === PLATFORM.BROWSER && isLoaded" class="emailPreview--desktop" (click)="preventDefault($event)">
     <div class="desktopFrame">
       <div class="browserFrame">
         <div class="dot1"></div>
@@ -21,7 +21,7 @@
       </div>
 
       <div class="wrapper">
-        <iframe #iframe [rdHtml]="previewHtml" frameborder="0" (load)="resizeIFrame($event)"></iframe>
+        <iframe #iframe [rdHtml]="previewHtml" frameborder="0" height="100%" ></iframe>
       </div>
 
     </div>
@@ -29,14 +29,14 @@
   </div>
 
   <!-- mobile -->
-  <div *ngIf="displayPlatform === PLATFORM.MOBILE" class="emailPreview--phone" (click)="preventDefault($event)">
+  <div *ngIf="displayPlatform === PLATFORM.MOBILE && isLoaded" class="emailPreview--phone" (click)="preventDefault($event)">
     <div class="phoneFrame">
       <span>Inbox</span>
       <div class="emailSubject"><strong>Subject: </strong>{{subject}}</div>
     </div>
 
     <div class="wrapper">
-      <iframe #iframe [rdHtml]="previewHtml" frameborder="0" (load)="resizeIFrame($event)"></iframe>
+      <iframe #iframe [rdHtml]="previewHtml" frameborder="0" height="100%"></iframe>
     </div>
 
   </div>

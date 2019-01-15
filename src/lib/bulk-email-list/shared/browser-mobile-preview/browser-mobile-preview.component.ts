@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 
 
-import {RdamlService} from '../rdaml/rdaml.service';
+import { RdamlService } from '../rdaml/rdaml.service';
 import { PLATFORM } from '../browser-mobile-preview/platform.enum';
 
 @Component({
@@ -22,24 +22,25 @@ export class BrowserMobilePreviewComponent implements OnInit, OnChanges {
   @Input() senderId?: number;
   @Input() personId?: number;
   @Input() parseRdmlOnLoad: boolean = true;
+  isLoaded = false;
 
   displayPlatform: number = PLATFORM.MOBILE;
   PLATFORM = PLATFORM;
   previewHtml: string;
 
-  constructor(private rdamlSvc: RdamlService) {
+  constructor(private rdamlSvc: RdamlService, private changeDetectorRef: ChangeDetectorRef) {
   }
 
   ngOnInit() {
-    this.displayPlatform = PLATFORM.MOBILE;
     this.previewHtml = this.html;
   }
 
   ngOnChanges(newVal: SimpleChanges) {
     let htmlChange: SimpleChange = newVal['html'];
     if (htmlChange && htmlChange.currentValue && htmlChange.currentValue !== htmlChange.previousValue) {
-      if (this.parseRdmlOnLoad)
+      if (this.parseRdmlOnLoad) {
         return this.parseRdml();
+      }
       return this.previewHtml = htmlChange.currentValue;
     }
   }
@@ -51,8 +52,9 @@ export class BrowserMobilePreviewComponent implements OnInit, OnChanges {
   }
 
   onToggleRdml(event) {
-    if (!event || !event.target.checked)
+    if (!event || !event.target.checked) {
       return this.previewHtml = this.html;
+    }
 
     this.parseRdml();
   }
@@ -63,21 +65,16 @@ export class BrowserMobilePreviewComponent implements OnInit, OnChanges {
       communityGroupId: this.communityGroupId,
       senderId: this.senderId,
       personId: this.personId
-    }, this.html)
-      .subscribe(result => {
-        this.previewHtml = result.parsed_html;
-      }, (err) => {
-        console.error(err);
+    }, this.html).subscribe(result => {
+      this.previewHtml = result.parsed_html;
+      this.isLoaded = true;
+    },
+      (err) => { console.error(err);
         this.previewHtml = this.html;
-      });
-  }
-
-  resizeIFrame(event: Event) {
-    let iframe = <HTMLFrameElement>event.srcElement;
-    iframe.height = iframe.contentWindow.document.body.scrollHeight;
+        this.isLoaded = true; }
+    );
   }
 
   ngOnDestroy() {
-
   }
 }
