@@ -8,7 +8,6 @@ import { CoreApiService, TextMsgItApiService } from '@rd/core';
 import { CoreApiServiceMock } from '@rd/core/testing';
 import { DynamicTypeBuilder } from '@rd/compiler';
 
-// import { BrowserMobilePreviewModule } from './browser-mobile-preview.module';
 import { BrowserMobilePreviewComponent } from './browser-mobile-preview.component';
 import { RdamlService } from '../rdaml/rdaml.service';
 
@@ -36,7 +35,6 @@ describe('BrowserMobilePreviewComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BrowserMobilePreviewComponent);
     component = fixture.componentInstance;
-    // fixture.detectChanges();
   });
 
   it('should create', () => {

@@ -1,8 +1,8 @@
 <div class="emailPreview__container">
   <div class="btn-group">
-    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform == PLATFORM.MOBILE" [value]="PLATFORM.MOBILE"
+    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform === PLATFORM.MOBILE" [value]="PLATFORM.MOBILE"
       (click)="displayPlatform = PLATFORM.MOBILE">Mobile</button>
-    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform == PLATFORM.BROWSER" [value]="PLATFORM.BROWSER"
+    <button class="btn btn-default dropdown-toggle" [disabled]="displayPlatform === PLATFORM.BROWSER" [value]="PLATFORM.BROWSER"
       (click)="displayPlatform = PLATFORM.BROWSER">Desktop</button>
   </div>
 
@@ -21,7 +21,7 @@
       </div>
 
       <div class="wrapper">
-        <iframe #iframe [rdHtml]="previewHtml" frameborder="0" (load)="resizeIFrame($event)"></iframe>
+        <iframe #iframe [rdHtml]="previewHtml" frameborder="0" height="100%" ></iframe>
       </div>
 
     </div>
@@ -36,7 +36,7 @@
     </div>
 
     <div class="wrapper">
-      <iframe #iframe [rdHtml]="previewHtml" frameborder="0" (load)="resizeIFrame($event)"></iframe>
+      <iframe #iframe [rdHtml]="previewHtml" frameborder="0" height="100%"></iframe>
     </div>
 
   </div>

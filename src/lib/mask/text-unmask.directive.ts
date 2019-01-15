@@ -14,7 +14,6 @@ export class TextUnmaskDirective {
   readonly REGEX = REGEX_MASK;
 
   constructor(private model: NgControl) {
-
   }
 
   ngOnInit(){
@@ -28,9 +27,9 @@ export class TextUnmaskDirective {
     // Note that you need to pass the 2nd argument with the following values:
     this.model.control.setValue(newValue, {
       emitEvent: true,
-      
+
       emitModelToViewChange: true,
-      
+
       emitViewToModelChange: true
     });
   }
@@ -39,4 +38,3 @@ export class TextUnmaskDirective {
     this.alive = false;
   }
 }
-
