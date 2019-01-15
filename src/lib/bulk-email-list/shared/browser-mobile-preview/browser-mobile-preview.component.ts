@@ -1,9 +1,5 @@
 import { Observable, Observer, Subject, Subscription } from 'rxjs';
-import {
-  ChangeDetectorRef, Component, ComponentRef, OnInit, Output, EventEmitter,
-  Inject, Input, RenderComponentType, Renderer, RootRenderer, ViewContainerRef, ViewChild,
-  OnChanges, SimpleChange, SimpleChanges
-} from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 
 
 import { RdamlService } from '../rdaml/rdaml.service';
