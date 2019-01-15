@@ -22,13 +22,12 @@ export class BrowserMobilePreviewComponent implements OnInit, OnChanges {
   @Input() senderId?: number;
   @Input() personId?: number;
   @Input() parseRdmlOnLoad: boolean = true;
-  isLoaded = false;
 
   displayPlatform: number = PLATFORM.MOBILE;
   PLATFORM = PLATFORM;
   previewHtml: string;
 
-  constructor(private rdamlSvc: RdamlService, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private rdamlSvc: RdamlService) {
   }
 
   ngOnInit() {
@@ -67,12 +66,10 @@ export class BrowserMobilePreviewComponent implements OnInit, OnChanges {
       personId: this.personId
     }, this.html).subscribe(result => {
       this.previewHtml = result.parsed_html;
-      this.isLoaded = true;
     },
       (err) => { console.error(err);
         this.previewHtml = this.html;
-        this.isLoaded = true; }
-    );
+      });
   }
 
   ngOnDestroy() {

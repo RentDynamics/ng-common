@@ -11,7 +11,7 @@
   </label>
 
   <!-- browser -->
-  <div *ngIf="displayPlatform === PLATFORM.BROWSER && isLoaded" class="emailPreview--desktop" (click)="preventDefault($event)">
+  <div *ngIf="displayPlatform === PLATFORM.BROWSER" class="emailPreview--desktop" (click)="preventDefault($event)">
     <div class="desktopFrame">
       <div class="browserFrame">
         <div class="dot1"></div>
@@ -29,7 +29,7 @@
   </div>
 
   <!-- mobile -->
-  <div *ngIf="displayPlatform === PLATFORM.MOBILE && isLoaded" class="emailPreview--phone" (click)="preventDefault($event)">
+  <div *ngIf="displayPlatform === PLATFORM.MOBILE" class="emailPreview--phone" (click)="preventDefault($event)">
     <div class="phoneFrame">
       <span>Inbox</span>
       <div class="emailSubject"><strong>Subject: </strong>{{subject}}</div>
