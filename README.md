@@ -1,7 +1,6 @@
 
 [![Circle CI Badge][circleci-badge]][circleci-link]
 [![codecov][codecov-image]][codecov-link]
-[![NSP Status][nsp-image]][nsp-link]
 [![Dependency Status][dependency-image]][dependency-link]
 [![Dev Dependency Status][dev-dependency-image]][dev-dependency-link]
 [![Peer Dependency Status][peer-dependency-image]][peer-dependency-link]
@@ -12,8 +11,6 @@
 ## @rd/common [![Public or Private Repo][public-true-image]][public-true-link]
 
 <!--[![Build Status](https://travis-ci.org/ng2select/bootstrap.svg?branch=master)](https://travis-ci.org/ng2select/bootstrap)-->
-
-## @rd/common@3.x
 
 #### this module contains any javascript code that is not essential to every application but is commonly used across applications. (excluding form-related javascript)
 it is reliant on the @rd/core module, jquery, and bootstrap currently. this module contains, but is not limited to, components/directives such as <rd-modal></rd-modal> and <rd-tabset></rd-tabset>, both of which are outlined below
@@ -268,7 +265,7 @@ export class ToastrExampleComponent implements OnInit {
 
 ```
 
-<iframe src="http://embed.plnkr.co/GeHGKI/?show=preview" frameborder="0" width="100%" height="500"></iframe>
+<!-- <iframe src="http://embed.plnkr.co/GeHGKI/?show=preview" frameborder="0" width="100%" height="500"></iframe> -->
 
 _powered by:_
 https://rentdynamics.com +
