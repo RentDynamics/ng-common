@@ -15,8 +15,6 @@
 #### This module contains any javascript code that is not essential to every application but is commonly used across applications. (excluding form-related javascript)
 It is reliant on the @rd/core module, jquery, and bootstrap currently. this module contains, but is not limited to, components/directives such as <rd-modal></rd-modal> and <rd-tabset></rd-tabset>, both of which are outlined below.
 
-http://rd.github.io
-
 ## Installation
 
 ```
