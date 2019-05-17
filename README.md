@@ -12,12 +12,12 @@
 
 <!--[![Build Status](https://travis-ci.org/ng2select/bootstrap.svg?branch=master)](https://travis-ci.org/ng2select/bootstrap)-->
 
-#### this module contains any javascript code that is not essential to every application but is commonly used across applications. (excluding form-related javascript)
-it is reliant on the @rd/core module, jquery, and bootstrap currently. this module contains, but is not limited to, components/directives such as <rd-modal></rd-modal> and <rd-tabset></rd-tabset>, both of which are outlined below
+#### This module contains any javascript code that is not essential to every application but is commonly used across applications. (excluding form-related javascript)
+It is reliant on the @rd/core module, jquery, and bootstrap currently. this module contains, but is not limited to, components/directives such as <rd-modal></rd-modal> and <rd-tabset></rd-tabset>, both of which are outlined below.
 
 http://rd.github.io
 
-## installation
+## Installation
 
 ```
 npm install @rd/common @rd/core jquery bootstrap toastr --save
@@ -25,7 +25,7 @@ npm install @rd/common @rd/core jquery bootstrap toastr --save
 ```
 
 
-## how to import
+## How to import
 
 ```TypeScript  
 
@@ -33,7 +33,7 @@ import { RdAngularCommonModule } from '@rd/common';
 
 ```
 
-## examples
+## Examples
 
 ## rd-expanding-list-view
 
@@ -51,7 +51,7 @@ import { RdAngularCommonModule } from '@rd/common';
 ```
 
 ## rd-modal
-defines the modal content and exposes the rd-modal instance to the parent component. can be used alongside the
+Defines the modal content and exposes the rd-modal instance to the parent component. Can be used alongside the
 convenience [rd-modal-show-button], [rd-modal-hide-button], and the [rd-modal-toggle-button]. (convenience/safety directives)
 
 ### <rd-modal options="amenitiesModalOptions" /> modal-options bootstrap declaration (inclusion optional)
@@ -69,7 +69,7 @@ interface ModalOptions {
 
 ```
 
-### basic view-based modal implementation (control modal from template)
+### Basic view-based modal implementation (control modal from template)
 
 ```HTML
 
@@ -107,7 +107,7 @@ interface ModalOptions {
 
 ```
 
-### moderate typescript-based modal implementation (control modal from component)
+### Moderate typescript-based modal implementation (control modal from component)
 
 ```TypeScript
 
@@ -226,7 +226,7 @@ export class AmenitiesModalComponent implements OnInit, AfterViewInit {
 
   <!-- headers and sorting -->
   <div rd-simple-sort [activeSortField]="orderByField" (change)="orderBy($event)" class="row" style="font-weight: bold; padding: 10px 20px;">
-    <div [rd-simple-sort-field]="'community__address__addressLine_1'" class="col-sm-3" style="width: 28%">Unit</div>
+    <div [rd-simple-sort-field]="'community__address__address_line_1'" class="col-sm-3" style="width: 28%">Unit</div>
     <div [rd-simple-sort-field]="'name'" class="col-sm-2" style="width: 19%">Floorplan</div>
     <div [rd-simple-sort-field]="'marketRent'" class="col-sm-2" style="width: 13%">Market Price</div>
     <div [rd-simple-sort-field]="'community__community_baskets__basket__name'" class="col-sm-2" style="width: 18%">District</div>
@@ -267,21 +267,22 @@ export class ToastrExampleComponent implements OnInit {
 
 <!-- <iframe src="http://embed.plnkr.co/GeHGKI/?show=preview" frameborder="0" width="100%" height="500"></iframe> -->
 
-_powered by:_
-https://rentdynamics.com +
-https://angular.io
-
-## release
+## Contributing
 
 In order to release this package automatically, you must format the commit message properly so that when it is merged into master, it will semantically release the new changes based on commit msg type and previously tagged version
 
-Don't forget to expose any new additions publically, ensure everything is accessible via the public_api.ts
+Don't forget to expose any new additions publicly, ensure everything is accessible via the public_api.ts
 
 [Code review guidelines for this project](CODE_REVIEWS.md)
 
 [Coding standards for this project](CODING_STANDARDS.md)
 
 [Contribution guidelines for this project](CONTRIBUTING.md)
+
+
+_powered by:_
+https://rentdynamics.com +
+https://angular.io
 
 
 [npm-icon]: https://nodei.co/npm/@rd/common.svg?downloads=true
