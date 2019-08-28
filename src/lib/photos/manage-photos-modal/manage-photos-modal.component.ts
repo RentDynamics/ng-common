@@ -5,7 +5,7 @@ import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, View
 import { CoreApiService, CoreApiSelector } from '@rd/core';
 import { FileUploader } from 'ng2-file-upload';
 
-import { ImgixService } from '../../imgix';
+import { ImgixService } from '../../imgix/imgix.service';
 import { Image } from '../shared/image';
 import { PhotosService } from '../photos.service';
 import { PhotosUploader } from '../photos-uploader';

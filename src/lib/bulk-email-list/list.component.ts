@@ -3,7 +3,7 @@ import {switchMap} from 'rxjs/operators';
 import { Component, ChangeDetectorRef, OnInit, Inject, Input} from '@angular/core';
 import { Observable ,  Observer ,  Subject, Subscription } from 'rxjs';
 
-import { InfiniteScrollService } from '../infinite-scroll';
+import { InfiniteScrollService } from '../infinite-scroll/infinite-scroll.service';
 
 import { BulkEmailMessageModel } from './bulk-email-message.model';
 import { BulkEmailDataService } from './bulk-email-data-service';

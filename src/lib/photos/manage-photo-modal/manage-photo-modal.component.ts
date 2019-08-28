@@ -8,7 +8,7 @@ import { BootstrapModalComponent } from '@rd/common/src/lib/modal';
 import { FileUploader } from 'ng2-file-upload';
 
 // import { environment } from '../../../../environments/environment';
-import { ImgixService } from '../../imgix';
+import { ImgixService } from '../../imgix/imgix.service';
 import { Image } from '../shared/image';
 import { PhotosService } from '../photos.service';
 import { PhotosUploader } from '../photos-uploader';
