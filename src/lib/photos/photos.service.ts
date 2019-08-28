@@ -5,7 +5,7 @@ import { FileUploader } from 'ng2-file-upload';
 
 import { CoreApiService, CoreApiSelector } from '@rd/core';
 
-import { ImgixService } from '../imgix';
+import { ImgixService } from '../imgix/imgix.service';
 import { Observable } from 'rxjs';
 
 @Injectable()
