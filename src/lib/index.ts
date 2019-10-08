@@ -16,3 +16,4 @@ export * from './infinite-scroll/index';
 export * from './messaging/index';
 export * from './wizard/index';
 export * from './bulk-email-list/index';
+export * from './switch-thingy/switch-thingy.module';
