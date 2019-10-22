@@ -1,4 +1,4 @@
-<div class="switch-option-container" rdSelect #select="rdSelect" [multiple]="false" [(ngModel)]="selected" (onChange)="onChange.emit($event)">
+<div class="switch-option-container" rdSelect #select="rdSelect" [multiple]="false" [(ngModel)]="selected" (change)="onChange.emit($event)">
 
   <div *ngFor="let option of options" class="switch-option" rdOption #liOption="rdOption" [select]="select" [class.active]="liOption.isActive()"
     [value]="option">
