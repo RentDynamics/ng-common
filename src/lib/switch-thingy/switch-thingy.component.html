@@ -1,8 +1,13 @@
 <div class="switch-option-container" rdSelect #select="rdSelect" [multiple]="false" [(ngModel)]="selected" (change)="onChange.emit($event)">
 
-  <div *ngFor="let option of options" class="switch-option" rdOption #liOption="rdOption" [select]="select" [class.active]="liOption.isActive()"
-    [value]="option">
-    {{option}}
+  <div *ngFor="let option of options" class="switch-option">
+
+    <div *ngIf="!isDisabled(option)" rdOption #liOption="rdOption" [select]="select" [value]="option" [class.active]="liOption.isActive()">
+      {{option}}
+    </div>
+
+    <div *ngIf="isDisabled(option)" class="disabled">{{option}}</div>
+
   </div>
 
 </div>
