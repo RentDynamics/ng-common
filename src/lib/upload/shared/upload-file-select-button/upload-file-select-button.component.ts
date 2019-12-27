@@ -6,12 +6,13 @@ import { UploadComponent } from '../../upload.component';
 @Component({
   selector: 'rd-upload-file-select-button',
   template: `
-    <input type="file" ng2FileSelect [uploader]="uploadComponent.uploader" [attr.multiple]="multiple" /><br/>
+    <input type="file" ng2FileSelect [uploader]="uploadComponent.uploader" [attr.multiple]="multiple" [attr.accept]="allowedMimeTypes?.join(',')" /><br/>
   `,
   styleUrls: ['./upload-file-select-button.component.less'],
 })
 export class UploadFileSelectButtonComponent implements OnInit {
   @Input() multiple: boolean;
+  @Input() allowedMimeTypes: string[];
 
   constructor(public uploadComponent: UploadComponent) {}
 
