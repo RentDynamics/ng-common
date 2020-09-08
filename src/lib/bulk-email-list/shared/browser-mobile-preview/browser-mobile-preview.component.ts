@@ -1,5 +1,5 @@
 import { Observable, Observer, Subject, Subscription } from 'rxjs';
-import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges, NgZone } from '@angular/core';
 
 
 import { RdamlService } from '../rdaml/rdaml.service';
@@ -24,7 +24,7 @@ export class BrowserMobilePreviewComponent implements OnInit, OnChanges {
   PLATFORM = PLATFORM;
   previewHtml: string;
 
-  constructor(private rdamlSvc: RdamlService) {
+  constructor(private rdamlSvc: RdamlService, private ngZone: NgZone) {
   }
 
   ngOnInit() {
@@ -69,6 +69,16 @@ export class BrowserMobilePreviewComponent implements OnInit, OnChanges {
         this.previewHtml = this.html;
         this.isLoaded = true;
       });
+  }
+
+  resizeIFrame(iframe: HTMLFrameElement) {
+    if (!iframe) {
+      return;
+    }
+    this.ngZone.run(() => {
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight ?
+        iframe.contentWindow.document.body.scrollHeight + 'px' : '100% !important';
+    });
   }
 
   ngOnDestroy() {
