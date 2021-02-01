@@ -4,33 +4,19 @@
   name: 'phoneNumber'
 })
 export class PhoneNumberPipe implements PipeTransform {
-
-  constructor() { }
+  badCharacters: RegExp = /[()-\s]/g;
 
   transform(phoneNumber: string, outputFormat: string = '(###) ###-####'): any {
-    if (!phoneNumber) return phoneNumber;
-    let charCount: number = 0;
-    let output: string = '';
-    let currentIndex: number = 0;
-    let phoneLength: number = 0;
-    phoneLength = phoneNumber.length;
-    if (outputFormat && outputFormat.indexOf('#') !== -1) {
-      for (let c of outputFormat) {
-        if (c === '#') {
-          if (currentIndex < phoneLength) {
-            output += phoneNumber[currentIndex];
-            currentIndex++;
-          }
-          
-        }
-        else {
-          output += c;
-        }
-      }
-    }
-    else {
-      output = phoneNumber;
-    }
+    if ( !phoneNumber || !outputFormat ) return phoneNumber;
+
+    const rawPhone = phoneNumber.replace(this.badCharacters, '');
+
+    const maskDigitCount = outputFormat.match(/#/g).length;
+    if (rawPhone.length !== maskDigitCount) return phoneNumber;
+
+    let output = outputFormat;
+    rawPhone.match(/[0-9]/g).forEach((digit) => output = output.replace(/#/, digit));
+
     return output;
   }
 }
