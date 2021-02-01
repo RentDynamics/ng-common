@@ -1,9 +1,8 @@
-import { TestBed, async } from '@angular/core/testing';
 import { PhoneNumberPipe } from './phone-number.pipe';
 
-let pipe;
+let pipe: PhoneNumberPipe;
 
-describe('Pipe: MomentFromNowFormat', () => {
+describe('Pipe: PhoneNumber', () => {
 
   beforeEach(() => {
     pipe = new PhoneNumberPipe();
@@ -72,4 +71,5 @@ describe('Pipe: MomentFromNowFormat', () => {
     // assert
     expect(result).toEqual(incompatiblePhone);
   });
+
 });

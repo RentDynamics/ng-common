@@ -4,9 +4,10 @@
   name: 'phoneNumber'
 })
 export class PhoneNumberPipe implements PipeTransform {
+
   badCharacters: RegExp = /[()-\s]/g;
 
-  transform(phoneNumber: string, outputFormat: string = '(###) ###-####'): any {
+  transform(phoneNumber: string, outputFormat: string = '(###) ###-####'): string {
     if ( !phoneNumber || !outputFormat ) return phoneNumber;
 
     const rawPhone = phoneNumber.replace(this.badCharacters, '');
@@ -19,4 +20,5 @@ export class PhoneNumberPipe implements PipeTransform {
 
     return output;
   }
+
 }
